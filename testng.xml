@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testing JJill Application">
+
+<listeners>
+<listener class-name="extentReportListener.ExtentReportNG"/>
+</listeners>
+    <test name="Test for the JJill application">
+    <groups>
+    <run>
+
+    <!-- <include name='Production'/>  -->
+<!-- <include name='p'/> -->
+    </run>
+    </groups>
+         <classes>
+             <class name="com.JJill.testcases.LoginTest">
+              <methods> 
+             <!--  <include name="verifyForgotPasswordFunctionality"/>   -->
+          	<!-- 		<include name='verifyQuickLookFunctionality' />   --> 
+               <!-- <include name="verifyPaginationFunctionality"/>  -->
+               <!-- <include name="verifyPDPFunctionality"/> -->
+            <!--     <include name="verifyPLPFunctionality"/>   -->
+        <!-- 	  <include name="verifySearchFunctionality"/>  -->
+       <!--   <include name="verifyCompletetheLook"/>  -->  
+   <!--  <include name="verifyShoptheLook"/> -->
+	<!--      <include name="verifyHeaderFunctionality"/>   -->                                             
+     <!--      <include name="verifyMonetateBadging"/>       -->     
+             <include name="verifyFooterFunctionality"/>
+<!--            Works with staging Environment only
+     <include name="verifyCheckoutFunctionality"/>  -->
+              </methods> 
+             </class>
+          </classes>
+     </test>
+	</suite>

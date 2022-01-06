@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="12" total="13" passed="1" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Fetch the useremail and password from the test data sheet and set it]]>
+    </line>
+    <line>
+      <![CDATA[Fetched the useremail and password from the test data sheet successfully]]>
+    </line>
+    <line>
+      <![CDATA[Enter Username and Password]]>
+    </line>
+    <line>
+      <![CDATA[Login Successful]]>
+    </line>
+    <line>
+      <![CDATA[Validate Footer Functioanality]]>
+    </line>
+    <line>
+      <![CDATA[Validated Footer Functionality successfully]]>
+    </line>
+    <line>
+      <![CDATA[Logging out of applicaiton]]>
+    </line>
+    <line>
+      <![CDATA[Logout successful]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2022-01-05T18:21:33Z" name="Testing JJill Application" finished-at="2022-01-05T18:21:59Z" duration-ms="26283">
+    <groups>
+      <group name="SmokeTest">
+        <method signature="LoginTest.verifyFooterFunctionality()[pri:0, instance:com.JJill.testcases.LoginTest@1f59a598]" name="verifyFooterFunctionality" class="com.JJill.testcases.LoginTest"/>
+      </group> <!-- SmokeTest -->
+      <group name="Production">
+        <method signature="LoginTest.verifyFooterFunctionality()[pri:0, instance:com.JJill.testcases.LoginTest@1f59a598]" name="verifyFooterFunctionality" class="com.JJill.testcases.LoginTest"/>
+      </group> <!-- Production -->
+    </groups>
+    <test started-at="2022-01-05T18:21:33Z" name="Test for the JJill application" finished-at="2022-01-05T18:21:59Z" duration-ms="26283">
+      <class name="com.JJill.testcases.LoginTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JJill.testcases.LoginTest@1f59a598]" started-at="2022-01-05T13:21:33Z" name="setup" finished-at="2022-01-05T13:21:41Z" duration-ms="8679" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyFooterFunctionality()[pri:0, instance:com.JJill.testcases.LoginTest@1f59a598]" started-at="2022-01-05T13:21:41Z" name="verifyFooterFunctionality" finished-at="2022-01-05T13:21:59Z" duration-ms="17203" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Fetch the useremail and password from the test data sheet and set it]]>
+            </line>
+            <line>
+              <![CDATA[Fetched the useremail and password from the test data sheet successfully]]>
+            </line>
+            <line>
+              <![CDATA[Enter Username and Password]]>
+            </line>
+            <line>
+              <![CDATA[Login Successful]]>
+            </line>
+            <line>
+              <![CDATA[Validate Footer Functioanality]]>
+            </line>
+            <line>
+              <![CDATA[Validated Footer Functionality successfully]]>
+            </line>
+            <line>
+              <![CDATA[Logging out of applicaiton]]>
+            </line>
+            <line>
+              <![CDATA[Logout successful]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyFooterFunctionality -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.JJill.testcases.LoginTest@1f59a598]" started-at="2022-01-05T13:21:59Z" name="tearDown" finished-at="2022-01-05T13:21:59Z" duration-ms="350" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.JJill.testcases.LoginTest -->
+    </test> <!-- Test for the JJill application -->
+  </suite> <!-- Testing JJill Application -->
+</testng-results>
