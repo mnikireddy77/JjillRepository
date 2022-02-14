@@ -31,7 +31,20 @@ public class LoginFunctionality extends ElementOperations{
 
 		@FindBy(xpath = "//input[@id='logonPassword']")
 		WebElement password;
+		
+		
+		@FindBy(xpath = "//button[@data-provider='google']")
+		WebElement btn_slackgoogle;
+		
+		@FindBy(xpath = "//input[@type='email']")
+		WebElement gmail_username;
 
+		@FindBy(xpath = "//input[@type='password']")
+		WebElement gmail_password;
+		
+		@FindBy(xpath = "//span[contains(text(),'Next')]")
+		WebElement gmail_nextbtn;
+		
 		@FindBy(xpath = "//a[contains(@href,'forget')]")
 		WebElement btnforgotpassword;
 		
@@ -87,19 +100,21 @@ public class LoginFunctionality extends ElementOperations{
 			waitforElementVisiblility(btnsignin,sleeplow);
 			btnsignin.click();
 			Reporter.log("Login Successful",true);
-			try {
-
-				driver.manage().timeouts().implicitlyWait(200, TimeUnit.SECONDS);
-				driver.switchTo().frame(promotionbox);
-				btnclose.click();	
-			}
-			finally
-			{
-			Thread.sleep(10);
+			Thread.sleep(500);
+			/*try {
+				Thread.sleep(500);
+				if(promotionbox.isDisplayed())
+				{
+			driver.switchTo().frame(promotionbox);
+			btnclose.click();
 			driver.switchTo().parentFrame();
+			Thread.sleep(50);
+		}}*/
+			/*finally
+			{*/
 			String title= driver.getTitle();
 			Assert.assertEquals(title, "Women's apparel, accessories, and footwear from J.Jill");
-			}
+			/* } */
 			
 			return new AddProduct_CheckoutFunctionality();
 		}
@@ -110,7 +125,7 @@ public class LoginFunctionality extends ElementOperations{
 			driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			waitforElementVisiblility(btnmyaccount, sleeplow).click();
 			readValuesForLogin("Login_Data", "Login");
-			Reporter.log("Enter Username and Password",true);
+			Reporter.log("Enter Username",true);
 			username.sendKeys(TestBase.testData.get().getUserEmail());
 			btnforgotpassword.click();
 			txtemailaddress.sendKeys(TestBase.testData.get().getUserEmail());
@@ -123,8 +138,30 @@ public class LoginFunctionality extends ElementOperations{
 			return new LoginFunctionality();
 		}
 		
-		public LoginFunctionality JJill_Logout() {
-			Reporter.log("Logging out of applicaiton", true);
+		/*
+		 * public LoginFunctionality JJill_ValidateForgotPassword_Gmail() throws
+		 * InterruptedException { driver.manage().timeouts().implicitlyWait(20,
+		 * TimeUnit.SECONDS);
+		 * Reporter.log("Logging into Gmail to check the Forgot Password email",true);
+		 * Thread.sleep(10000); driver.get("https://stackoverflow.com/users/login");
+		 * btn_slackgoogle.click(); // waitforElementVisiblility(btnmyaccount,
+		 * sleeplow).click(); readValuesForLogin("Login_Data", "Login");
+		 * Reporter.log("Enter Username and Password",true);
+		 * gmail_username.sendKeys(TestBase.testData.get().getUserEmail());
+		 * gmail_nextbtn.click();
+		 * gmail_password.sendKeys(TestBase.testData.get().getPassword());
+		 * gmail_nextbtn.click(); Reporter.log("Logged into gmail sucessfully",true);
+		 * String title= driver.getTitle(); System.out.println(title); //
+		 * Assert.assertEquals(resetlinkconfirmationmsg, "An email has been sent to "
+		 * +TestBase.testData.get().getUserEmail()+
+		 * " containing information on how to reset your password."); //
+		 * btnLogo.click(); // driver.manage().timeouts().implicitlyWait(100,
+		 * TimeUnit.SECONDS); return new LoginFunctionality(); }
+		 */
+		
+		public LoginFunctionality JJill_Logout() throws InterruptedException {
+			Reporter.log("Logging out of application", true);
+			Thread.sleep(500);
 			btnaccount.click();
 			btnLogout.click();
 			Reporter.log("Logout successful", true);
