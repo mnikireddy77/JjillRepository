@@ -45,7 +45,8 @@ public class TestBase {
 	public void Initialization() {
 		String Browser = prop.getProperty("browser");
 		if(Browser.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + File.separator + "chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + File.separator + "chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\nitkhitha.kuthukur\\OneDrive - J.Jill\\Automation\\Drivers\\chromedriver.exe");
 			DesiredCapabilities capabilities = new DesiredCapabilities();
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--disable-extensions");
@@ -89,7 +90,5 @@ public class TestBase {
 	//	driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 
 	}
-	
-	
 }
 
