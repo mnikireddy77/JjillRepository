@@ -34,7 +34,7 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 		@FindBy(xpath="//iframe[@frameborder='0']")
 		WebElement promotionbox;
 		
-		@FindBy(css = "button[class*=remove]")
+		@FindBy(css = "button[class*='offer-control close']")
 		WebElement btnclose;
 		
 		@FindBy(css = "a[class= 'toplevel main-menu-link'][href='/shop/womens-clothing']")
@@ -46,7 +46,7 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 		@FindBy(xpath = "(//a[contains(text(),'Must-Have Outfits')])[1]")
 		WebElement department_STL;
 		
-		@FindBy(xpath = "(//span[@class='shop-link'])[1]")
+		@FindBy(xpath = "(//span[@class='shop-link'])[2]")
 		WebElement btnSTL;
 		
 		@FindBy(xpath = "//div[@class='hidden-xs'] /h3[contains(@class,'sub-head ')]")
@@ -139,7 +139,7 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 		WebElement selectitemdescription;
 		
 		
-		@FindBy(xpath = "(//span[contains(text(),'Quick Look')])[1]") 
+		@FindBy(xpath = "(//button //span[contains(text(),'Quick Look')])[5]") 
 		WebElement btnquicklook;
 		
 		@FindBy(xpath = "(//div[contains(@id,'product')])[2] /div /div[1] /div[1]") 
@@ -158,7 +158,7 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 		WebElement plp_reviews;
 		
 		
-		@FindBy(xpath = "//button[@title='M']")
+		@FindBy(xpath = "//button[@title='L']")
 		WebElement btnsize;
 
 		@FindBy(xpath = "//button[@type='submit'][@data-th='add-to-cart']")
@@ -319,7 +319,7 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 		@FindBy(xpath="(//div[@data-id='ProductOptionSelector'])[2] /div//button")
 		WebElement ql_btncolor;
 		
-		@FindBy(xpath="(//div[@data-id='ProductOptionSelector'])[4]/div[3]/button")
+		@FindBy(xpath="(//div[@data-id='ProductOptionSelector'])[3]/div[3]/button")
 		WebElement ql_btnsize;
 		
 		@FindBy(xpath="//p[contains(text(),'Guide')]")
@@ -427,7 +427,7 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 		@FindBy(xpath="(//a[contains(@href,'about')])[1]")
 		WebElement btn_Footerwhoweare;
 
-		@FindBy(xpath="	(//a[contains(@href,'compassion')])[5]")
+		@FindBy(xpath="(//a[contains(@href,'compassion')])[3]")
 		WebElement btn_Footercompassionfund;
 		
 		@FindBy(xpath="(//a[contains(@href,'perfect-fit')])[2]")
@@ -439,7 +439,7 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 		@FindBy(xpath="(//a[contains(@href,'investor')])[1]")
 		WebElement btn_FooterInvestors;
 		
-		@FindBy(xpath="//a[contains(@href,'social')]")
+		@FindBy(xpath="(//a[contains(@href,'social')])[1]")
 		WebElement btn_FooterSocialResponsibility;
 		
 		@FindBy(xpath="(//a[contains(@href,'california')])[1]")
@@ -471,50 +471,105 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 		}
 		
 		 
-		public AddProduct_CheckoutFunctionality selectClothingDepartment() {
+		public AddProduct_CheckoutFunctionality selectClothingDepartment() throws InterruptedException {
 			Reporter.log("Select the department", true);
-			action.moveToElement(drpClothing).perform();
-			action.moveToElement(department_knitTops).click().perform();
+			Thread.sleep(4000);
+			try {
+				if(promotionbox.isDisplayed())
+				{
+					Thread.sleep(500);
+			driver.switchTo().frame(promotionbox);
+			btnclose.click();
+			driver.switchTo().parentFrame();
+			Thread.sleep(50);
+		}}
+			finally
+			{
+		//	action.moveToElement(drpClothing).perform();
+		//	action.moveToElement(department_knitTops).click().perform();
+			action.moveToElement(drpClothing).moveToElement(department_knitTops).click().perform();
+			Thread.sleep(1000);
 			Reporter.log("Selected the department sucessfully", true);
+			}
 			return this;
 		}
 		
-		public AddProduct_CheckoutFunctionality selectSaleDepartment() {
+		public AddProduct_CheckoutFunctionality selectSaleDepartment() throws InterruptedException {
 			Reporter.log("Select the department", true);
+			Thread.sleep(3000);
+			try {
+			if(promotionbox.isDisplayed())
+			{
+			driver.switchTo().frame(promotionbox);
+			btnclose.click();
+			driver.switchTo().parentFrame();
+			//Thread.sleep(1000);
+		}}
+			finally {
+				Thread.sleep(3000);
 			action.moveToElement(drpSale).perform();
-			action.moveToElement(department_AllClothing).click().perform();
+		//	action.moveToElement(department_AllClothing).click().perform();
+			action.clickAndHold(department_AllClothing).release().perform();
+		//	action.moveToElement(drpSale).moveToElement(department_AllClothing).click().perform();
 			Reporter.log("Selected the department sucessfully", true);
+			}
 			return this;
 		}
 		
 		
-		public AddProduct_CheckoutFunctionality selectSTLDepartment() {
+		public AddProduct_CheckoutFunctionality selectSTLDepartment() throws InterruptedException {
 			Reporter.log("Select the department", true);
+			Thread.sleep(5000);
+			try {
+				if(promotionbox.isDisplayed())
+				{
+			driver.switchTo().frame(promotionbox);
+			btnclose.click();
+			driver.switchTo().parentFrame();
+			Thread.sleep(100);
+		}}
+			finally
+			{
+				//Thread.sleep(500);
 			action.moveToElement(drpNewArrivals).perform();
 			action.clickAndHold(department_STL).release().perform();
 			Reporter.log("Selected the department sucessfully", true);
+			}
 			return new AddProduct_CheckoutFunctionality();
 		}
 		
 		public AddProduct_CheckoutFunctionality selectQuickLook() throws InterruptedException {
 			Reporter.log("Select the quick look option on an Item", true);
-			driver.switchTo().frame(promotionbox);
-			btnclose.click();
-			driver.switchTo().parentFrame();
-			Thread.sleep(50);
+			/*
+			 * try { if(promotionbox.isDisplayed()) { driver.switchTo().frame(promotionbox);
+			 * btnclose.click(); driver.switchTo().parentFrame(); Thread.sleep(50); } }
+			 * finally {
+			 */
 			jse.executeScript("window.scrollBy(0,600)");
 			Thread.sleep(1000);
 			action.click(btnquicklook).perform();
+		//	}
 			Reporter.log("Quick look option is selected sucessfully on an Item", true);
 			return this;
 		}
 		
 		public AddProduct_CheckoutFunctionality validateQuickLookScreen() throws InterruptedException {
 			Reporter.log("Validate quicklook screen", true);
+		//	jse.executeScript("window.scrollBy(0,1000)");
+		//	action.sendKeys(Keys.PAGE_DOWN).build().perform();
+		//	action.sendKeys(Keys.PAGE_DOWN).build().perform();
+	
+		//	action.moveToElement(btnquicklook).click().release().build().perform();
+		action.click(btnquicklook).release().build().perform();
+		//	action.click().build().perform();
+			//btnquicklook.click();
 			for(int i=0;i<5;i++)
 			{
 			Thread.sleep(1000);
 			}
+		//	action.click(btnquicklook).perform();
+		
+			Thread.sleep(1000);
 			Assert.assertEquals(ql_txtQuickLook.isDisplayed(), true);
 			Thread.sleep(200);
 			Assert.assertEquals(ql_heroimg.isDisplayed(), true);
@@ -528,13 +583,14 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 			Assert.assertEquals(ql_btnsizetype.isDisplayed(),true);
 			Thread.sleep(20);
 			Assert.assertEquals(ql_btncolor.isDisplayed(),true);
-			Thread.sleep(20);
-			action.sendKeys(Keys.PAGE_DOWN).build().perform();
+			Thread.sleep(50);
+			//jse.executeScript("window.scrollBy(0,100)");	
+		//	action.sendKeys(Keys.PAGE_DOWN).build().perform();
 			Assert.assertEquals(ql_btnsize.isDisplayed(),true);
 			Thread.sleep(50);
 			ql_btnsize.click();
 			Thread.sleep(50);
-			//action.sendKeys(Keys.PAGE_DOWN).build().perform();
+			action.sendKeys(Keys.PAGE_DOWN).build().perform();
 			Assert.assertEquals(ql_sizeguide.isDisplayed(),true);
 			Thread.sleep(20);
 			Assert.assertEquals(ql_fitpredicator.isDisplayed(),true);
@@ -550,6 +606,7 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 			btnaddtobag.click();
 			btnviewshoppingcart.click();
 			Reporter.log("quicklook validation successful", true);
+			//}
 			return new AddProduct_CheckoutFunctionality();
 		}
 		
@@ -582,16 +639,16 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 		
 		public LoginFunctionality validateMonetateBadging() throws InterruptedException {
 			Reporter.log("Validate the Monetate Badging", true);
-			try {
+			/*try {
 				if(promotionbox.isDisplayed())
 				{
 			driver.switchTo().frame(promotionbox);
 			btnclose.click();
 			driver.switchTo().parentFrame();
 			Thread.sleep(50);
-		}}
-			finally
-			{
+		}}*/
+			/*finally
+			{*/
 			int count=1;
 			int pagecount= 1;
 			try {
@@ -614,8 +671,8 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 			//System.out.println(size);
 			for(int i=0 ;i<monetatebadge.size();i++)
 			{
-				//System.out.println(monetatebadge.get(i));
-				//System.out.println(monetatebadge.size()+ " akdjf" + i);
+				System.out.println(monetatebadge.get(i));
+				System.out.println(monetatebadge.size()+ " akdjf" + i);
 			//	Assert.assertEquals(monetatebadge.size(), 36);
 				System.out.println(txt_itemdesc.get(i).getText());
 				Assert.assertEquals(monetatebadge.get(i).isDisplayed(), true);
@@ -628,11 +685,32 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 				Thread.sleep(50);
 				count++;
 			}
-			jse.executeScript("window.scrollBy(0,250)");
+			jse.executeScript("window.scrollBy(0,500)");
 			try {
-			btnpreviousbottom.click();
-			Thread.sleep(1000);
+				//System.out.println(pagecount);
+				jse.executeScript("window.scrollBy(0,-200)");
+				Thread.sleep(500);
+				btnpreviousbottom.click();
+				Thread.sleep(1500);
 			}
+				/*
+				 * // pagecount=pagecount-1; System.out.print(pagecount); String url=
+				 * driver.getCurrentUrl(); if(url.contains(Integer.toString(pagecount))) {
+				 * Thread.sleep(1000); } else { jse.executeScript("window.scrollBy(0,-280)");
+				 * btnpreviousbottom.click(); Thread.sleep(1000); }
+				 */
+			
+//			if(btn_FooterContactUs.isDisplayed())
+//			{
+//				jse.executeScript("window.scrollBy(0,-100)");
+//				btnpreviousbottom.click();	
+//				Thread.sleep(1000);
+//			}
+//			else
+//			{
+//				break;
+//			}
+			//}
 			catch(Exception e)
 			{
 			Thread.sleep(1000);
@@ -641,11 +719,11 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 		for(int i=0;i<15;i++)
 		{
 		Thread.sleep(1000);
-		jse.executeScript("window.scrollBy(0,-600)");
+		jse.executeScript("window.scrollBy(0,-700)");
 		}
 		Thread.sleep(1000);
 		Reporter.log("Monetate Badging validated sucessfully", true);
-			}
+			//}
 			return new LoginFunctionality();		
 			}
 		
@@ -752,19 +830,38 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 			{
 			jse.executeScript("window.scrollBy(0,-600)");
 			}
-			
+			try {
+				Thread.sleep(2000);
+				if(promotionbox.isDisplayed())
+				{
+			driver.switchTo().frame(promotionbox);
+			btnclose.click();
+			driver.switchTo().parentFrame();
+			Thread.sleep(500);
+		}}
+			finally
+			{
+				Thread.sleep(2000);
+			}
 			return new LoginFunctionality();
 		}	
 		
 		public AddProduct_CheckoutFunctionality validatePdpPage() throws InterruptedException {
 			Reporter.log("Validating the PDP Started", true);
+		/*	try {
+				if(promotionbox.isDisplayed())
+				{
 			driver.switchTo().frame(promotionbox);
 			btnclose.click();
 			driver.switchTo().parentFrame();
 			Thread.sleep(50);
-			jse.executeScript("window.scrollBy(0,600)");
+		}}*/
+			//finally
+			//{
+			jse.executeScript("window.scrollBy(0,700)");
 			Thread.sleep(1000);
-			action.click(selectitemdescription).perform();
+			selectitemdescription.click();
+		//	action.click(selectitemdescription).perform();
 			driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 			for(int i=0;i<10;i++)
 			{
@@ -781,11 +878,15 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 			Assert.assertEquals(ql_btnsizetype.isDisplayed(),true);
 			Thread.sleep(20);
 			Assert.assertEquals(ql_btncolor.isDisplayed(),true);
-			Thread.sleep(20);
+			Thread.sleep(70);
+			
+			jse.executeScript("window.scrollBy(0,100)");
 			Assert.assertEquals(btnsize.isDisplayed(),true);
 			Thread.sleep(20);
 			btnsize.click();
+			Thread.sleep(50);
 			action.sendKeys(Keys.PAGE_DOWN).build().perform();
+			Thread.sleep(50);
 			Assert.assertEquals(ql_sizeguide.isDisplayed(),true);
 			Thread.sleep(20);
 			Assert.assertEquals(ql_fitpredicator.isDisplayed(),true);
@@ -801,15 +902,22 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 			btnaddtobag.click();
 			btnviewshoppingcart.click();
 			Reporter.log("PDP Validation Sucessful", true);
+		//	}
 			return this;		
 			}
 
 		public LoginFunctionality validatePlpPage() throws InterruptedException {
 			Reporter.log("Validating the PLP Started", true);
+			Thread.sleep(1000);
+			/*try
+			{
 			driver.switchTo().frame(promotionbox);
 			btnclose.click();
 			driver.switchTo().parentFrame();
-			Thread.sleep(50);
+			Thread.sleep(1000);
+			}*/
+			/*finally
+			{*/
 			jse.executeScript("window.scrollBy(0,600)");
 			Thread.sleep(1000);
 			Assert.assertEquals(selectitem.isDisplayed(), true);
@@ -830,6 +938,7 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 			action.sendKeys(Keys.PAGE_UP).build().perform();
 			action.sendKeys(Keys.PAGE_UP).build().perform();
 			Reporter.log("PLP Validation Sucessful", true);
+		//	}
 			return new LoginFunctionality();		
 			}
 
@@ -886,23 +995,25 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 			}
 			Assert.assertEquals(txtATBConfirmation.getText(), "ADDED TO BAG");
 			STLbtnClose.click();
-		//	jse.executeScript("window.scrollBy(1000,0)");
 			for(int i=0;i<10;i++)
 			{
 			Thread.sleep(100);
+			action.sendKeys(Keys.PAGE_UP).build().perform();
 			}
-			action.sendKeys(Keys.PAGE_UP).build().perform();
-			Thread.sleep(40);
-			action.sendKeys(Keys.PAGE_UP).build().perform();
-			Thread.sleep(40);
+			
 			Reporter.log("Added STL item to Bag sucesfully", true);
 			}
 			return new LoginFunctionality();		
 			}
 		
 		
-		public AddProduct_CheckoutFunctionality validateSearchFunctionality() throws InterruptedException {
+		public AddProduct_CheckoutFunctionality validateSearchFunctionality() throws InterruptedException
+		{
 			Reporter.log("Validating the Search Functionality Started", true);
+			Thread.sleep(2000);
+			txtSearch.click();
+			txtSearch.sendKeys("Pure Jill Harmony Crew-Neck Tunic");
+			Thread.sleep(500);
 			try
 			{
 				if(promotionbox.isDisplayed())
@@ -910,47 +1021,50 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 			driver.switchTo().frame(promotionbox);
 			btnclose.click();
 			driver.switchTo().parentFrame();
-			Thread.sleep(50);
+			Thread.sleep(500);
 				}
 			}
 			finally
 			{
-			txtSearch.click();
-			txtSearch.sendKeys("Wearever Crew-Neck Ballet-Sleeve Top");
-			Thread.sleep(200);
-			Assert.assertEquals(searchresults.isDisplayed(), true);
 			searchresults.click();
-			Thread.sleep(500);
-			action.sendKeys(Keys.PAGE_DOWN).build().perform();
-			Thread.sleep(500);
+			Thread.sleep(2000);
+			jse.executeScript("window.scrollBy(0,300)");
 			btnsize.click();
-			// action.sendKeys(Keys.PAGE_DOWN).build().perform();
-			Thread.sleep(20);
+			Thread.sleep(500);
+			jse.executeScript("window.scrollBy(0,100)");
 			btnaddtobag.click();
+			Thread.sleep(10);
 			btnviewshoppingcart.click();
 			Reporter.log("Seacrh Validation Sucessful", true);
 			}
 			return new AddProduct_CheckoutFunctionality();	
+			
 			}
+		
 		
 		public LoginFunctionality validateCompletetheLook() throws InterruptedException {
 			Reporter.log("Validating Complete the Look Functionality Started", true);
+			Thread.sleep(1000);
 			try
 			{
+				Thread.sleep(2000);
 				if(promotionbox.isDisplayed())
 				{
 			driver.switchTo().frame(promotionbox);
 			btnclose.click();
 			driver.switchTo().parentFrame();
-			Thread.sleep(50);
+			Thread.sleep(500);
 				}
 			}
 			finally
 			{
 			txtSearch.click();
-			txtSearch.sendKeys("Simply Supima® V-Neck Tunic");
+		//16x search	txtSearch.sendKeys("216391");
+			//v9 prd txtSearch.sendKeys("226031");
+			txtSearch.sendKeys("234041");
 			Thread.sleep(200);
 			Assert.assertEquals(searchresults.isDisplayed(), true);
+			Thread.sleep(100);
 			searchresults.click();
 			Thread.sleep(100);
 			jse.executeScript("window.scrollBy(0,700)");
@@ -984,12 +1098,12 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 				Assert.assertEquals(itemFullDetails_CTL.get(i).isDisplayed(), true);	
 			}
 			Thread.sleep(20);
-			for(int j=0;j<5;j++)
+			for(int j=0;j<6;j++)
 			{
 				action.sendKeys(Keys.PAGE_UP).build().perform();
 				Thread.sleep(20);
 			}
-			Thread.sleep(500);
+			Thread.sleep(1000);
 			Reporter.log("Complete the Look Functionality Sucessfully", true);
 			}
 			return new LoginFunctionality();		
@@ -1156,7 +1270,8 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations{
 			return new AddProduct_CheckoutFunctionality();
 		}
 
-		public LoginFunctionality ConnectingMethod() {
+		public LoginFunctionality ConnectingMethod() throws InterruptedException {
+			Thread.sleep(1000);
 			return new LoginFunctionality();
 		}
 		

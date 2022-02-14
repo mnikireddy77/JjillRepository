@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="12" total="13" passed="1" failed="0" skipped="0">
+<testng-results ignored="12" total="13" passed="0" failed="1" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Fetch the useremail and password from the test data sheet and set it]]>
@@ -14,34 +14,73 @@
       <![CDATA[Login Successful]]>
     </line>
     <line>
-      <![CDATA[Validate Footer Functioanality]]>
+      <![CDATA[Select the department]]>
     </line>
     <line>
-      <![CDATA[Validated Footer Functionality successfully]]>
+      <![CDATA[Selected the department sucessfully]]>
     </line>
     <line>
-      <![CDATA[Logging out of applicaiton]]>
-    </line>
-    <line>
-      <![CDATA[Logout successful]]>
+      <![CDATA[Validate quicklook screen]]>
     </line>
   </reporter-output>
-  <suite started-at="2022-01-05T18:21:33Z" name="Testing JJill Application" finished-at="2022-01-05T18:21:59Z" duration-ms="26283">
+  <suite started-at="2022-02-14T17:37:43Z" name="Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Testing JJill Application]]]]]]]]]]]]]]]]]]]]]]" finished-at="2022-02-14T17:38:09Z" duration-ms="26530">
     <groups>
       <group name="SmokeTest">
-        <method signature="LoginTest.verifyFooterFunctionality()[pri:0, instance:com.JJill.testcases.LoginTest@1f59a598]" name="verifyFooterFunctionality" class="com.JJill.testcases.LoginTest"/>
+        <method signature="LoginTest.verifyQuickLookFunctionality()[pri:0, instance:com.JJill.testcases.LoginTest@1f59a598]" name="verifyQuickLookFunctionality" class="com.JJill.testcases.LoginTest"/>
       </group> <!-- SmokeTest -->
       <group name="Production">
-        <method signature="LoginTest.verifyFooterFunctionality()[pri:0, instance:com.JJill.testcases.LoginTest@1f59a598]" name="verifyFooterFunctionality" class="com.JJill.testcases.LoginTest"/>
+        <method signature="LoginTest.verifyQuickLookFunctionality()[pri:0, instance:com.JJill.testcases.LoginTest@1f59a598]" name="verifyQuickLookFunctionality" class="com.JJill.testcases.LoginTest"/>
       </group> <!-- Production -->
     </groups>
-    <test started-at="2022-01-05T18:21:33Z" name="Test for the JJill application" finished-at="2022-01-05T18:21:59Z" duration-ms="26283">
+    <test started-at="2022-02-14T17:37:43Z" name="Test for the JJill application(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)" finished-at="2022-02-14T17:38:09Z" duration-ms="26530">
       <class name="com.JJill.testcases.LoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JJill.testcases.LoginTest@1f59a598]" started-at="2022-01-05T13:21:33Z" name="setup" finished-at="2022-01-05T13:21:41Z" duration-ms="8679" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JJill.testcases.LoginTest@1f59a598]" started-at="2022-02-14T12:37:43Z" name="setup" finished-at="2022-02-14T12:37:48Z" duration-ms="5618" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyFooterFunctionality()[pri:0, instance:com.JJill.testcases.LoginTest@1f59a598]" started-at="2022-01-05T13:21:41Z" name="verifyFooterFunctionality" finished-at="2022-01-05T13:21:59Z" duration-ms="17203" status="PASS">
+        <test-method signature="verifyQuickLookFunctionality()[pri:0, instance:com.JJill.testcases.LoginTest@1f59a598]" started-at="2022-02-14T12:37:49Z" name="verifyQuickLookFunctionality" finished-at="2022-02-14T12:38:09Z" duration-ms="20668" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:94)
+	at org.testng.Assert.failNotEquals(Assert.java:513)
+	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
+	at org.testng.Assert.assertEquals(Assert.java:116)
+	at org.testng.Assert.assertEquals(Assert.java:305)
+	at org.testng.Assert.assertEquals(Assert.java:315)
+	at pages.AddProduct_CheckoutFunctionality.validateQuickLookScreen(AddProduct_CheckoutFunctionality.java:573)
+	at com.JJill.testcases.LoginTest.verifyQuickLookFunctionality(LoginTest.java:122)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
             <line>
               <![CDATA[Fetch the useremail and password from the test data sheet and set it]]>
@@ -56,24 +95,21 @@
               <![CDATA[Login Successful]]>
             </line>
             <line>
-              <![CDATA[Validate Footer Functioanality]]>
+              <![CDATA[Select the department]]>
             </line>
             <line>
-              <![CDATA[Validated Footer Functionality successfully]]>
+              <![CDATA[Selected the department sucessfully]]>
             </line>
             <line>
-              <![CDATA[Logging out of applicaiton]]>
-            </line>
-            <line>
-              <![CDATA[Logout successful]]>
+              <![CDATA[Validate quicklook screen]]>
             </line>
           </reporter-output>
-        </test-method> <!-- verifyFooterFunctionality -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.JJill.testcases.LoginTest@1f59a598]" started-at="2022-01-05T13:21:59Z" name="tearDown" finished-at="2022-01-05T13:21:59Z" duration-ms="350" status="PASS">
+        </test-method> <!-- verifyQuickLookFunctionality -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.JJill.testcases.LoginTest@1f59a598]" started-at="2022-02-14T12:38:09Z" name="tearDown" finished-at="2022-02-14T12:38:09Z" duration-ms="209" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.JJill.testcases.LoginTest -->
-    </test> <!-- Test for the JJill application -->
-  </suite> <!-- Testing JJill Application -->
+    </test> <!-- Test for the JJill application(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed)(failed) -->
+  </suite> <!-- Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Failed suite [Testing JJill Application]]]]]]]]]]]]]]]]]]]]]] -->
 </testng-results>

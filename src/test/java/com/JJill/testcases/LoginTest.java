@@ -63,7 +63,6 @@ public class LoginTest extends TestBase{
 	@Test(groups={"SmokeTest","Production"})
 	public void verifySearchFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
-		.selectSaleDepartment()
 		.validateSearchFunctionality()
 		.navigateToHomePage()
 		.JJill_Logout();
@@ -72,7 +71,6 @@ public class LoginTest extends TestBase{
 	@Test(groups={"SmokeTest","Production"})
 	public void verifyCompletetheLook() throws InterruptedException{
 		loginpage.JJill_Login()
-		.selectSaleDepartment()
 		.validateCompletetheLook()
 		.JJill_Logout();
 	}
@@ -116,11 +114,11 @@ public class LoginTest extends TestBase{
 		.JJill_Logout();
 	}
 	
-	@Test(groups={"SmokeTest","Production","p"}) 
+	@Test(groups={"SmokeTest","Production"}) 
 	public void verifyQuickLookFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
 		.selectClothingDepartment()
-		.selectQuickLook()
+	//	.selectQuickLook()
 		.validateQuickLookScreen()
 		.navigateToHomePage()
 		.JJill_Logout();
