@@ -7,18 +7,16 @@
   <test name="Test for the JJill application(failed)">
     <groups>
       <run>
-        <include name="Production"/>
+        <include name="h"/>
       </run>
     </groups>
     <classes>
       <class name="com.JJill.testcases.LoginTest">
         <methods>
           <include name="setup"/>
-          <include name="verifyCompletetheLook"/>
-          <include name="verifySearchFunctionality"/>
+          <include name="closeAll"/>
           <include name="tearDown"/>
-          <include name="verifyQuickLookFunctionality"/>
-          <include name="verifyFooterFunctionality"/>
+          <include name="verifyInventoryData"/>
         </methods>
       </class> <!-- com.JJill.testcases.LoginTest -->
     </classes>
