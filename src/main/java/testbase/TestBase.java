@@ -4,8 +4,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.util.Properties;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Stream;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -24,6 +27,7 @@ public class TestBase {
 	public static WebDriver driver;
 	
 	public static final ThreadLocal<TestData> testData = new ThreadLocal<TestData>();
+	Random random= new Random();
 	
 	public TestBase() 
 	    {
@@ -90,5 +94,41 @@ public class TestBase {
 	//	driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 
 	}
+	
+	/*
+	 * public String Random() { int leftLimit = 97; // letter 'a' int rightLimit =
+	 * 122; // letter 'z' int targetStringLength = 15; Random random = new Random();
+	 * 
+	 * String generatedString = random.ints(leftLimit, rightLimit + 1)
+	 * .limit(targetStringLength) .collect(StringBuilder::new,
+	 * StringBuilder::appendCodePoint, StringBuilder::append) .toString();
+	 * 
+	 * return generatedString;
+	 * 
+	 * }
+	 */
+	
+	public String generateRandomPassword(int len)
+    {
+        // ASCII range – alphanumeric (0-9, a-z, A-Z)
+        final String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$^&*()";
+ 
+        SecureRandom random = new SecureRandom();
+        StringBuilder sb = new StringBuilder();
+ 
+        // each iteration of the loop randomly chooses a character from the given
+        // ASCII range and appends it to the `StringBuilder` instance
+ 
+        for (int i = 0; i < len; i++)
+        {
+            int randomIndex = random.nextInt(chars.length());
+            sb.append(chars.charAt(randomIndex));
+        }
+ 
+        return sb.toString();
+    }
+
+	
+	
 }
 
