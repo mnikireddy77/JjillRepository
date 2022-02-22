@@ -18,12 +18,10 @@ import testbase.TestBase;
 
 public class Utility extends TestBase{
 	
-	public int createRandomNumber() {
-		Random randm =  new Random();
-		int low = 1;
-		int high = 100000;
-		return randm.nextInt(high-low) + low;
-	}
+	/*
+	 * public int createRandomNumber() { Random randm = new Random(); int low = 1;
+	 * int high = 100000; return randm.nextInt(high-low) + low; }
+	 */
 	
 	public static void takeScreenshotAtEndOfTest() throws IOException {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);

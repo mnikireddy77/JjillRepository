@@ -1,6 +1,7 @@
 package com.JJill.testcases;
 
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.LoginFunctionality;
@@ -46,7 +47,7 @@ public class LoginTest extends TestBase{
 	@Test(groups={"SmokeTest","Production"}) 
 	public void verifyPDPFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
-		.selectSaleDepartment()
+		.selectClothingDepartment()
 		.validatePdpPage()
 		.navigateToHomePage()
 		.JJill_Logout();
@@ -75,7 +76,7 @@ public class LoginTest extends TestBase{
 		.JJill_Logout();
 	}
 	
-	@Test(groups={"SmokeTest","Production","s"}) 
+	@Test(groups={"SmokeTest","Production"}) 
 	public void verifyShoptheLook() throws InterruptedException{
 		loginpage.JJill_Login()
 		.selectSTLDepartment()
@@ -114,25 +115,40 @@ public class LoginTest extends TestBase{
 		.JJill_Logout();
 	}
 	
-	@Test(groups={"SmokeTest","Production"}) 
+	@Test(groups={"SmokeTest","Production"},priority=10) 
+	public void verifyInventoryData() throws InterruptedException{
+		loginpage.JJill_Login()
+		.validateOOSFunctionality()
+		.validateLowInventoryFunctionality()
+		.validateBackOrderedFunctionality()
+		.JJill_Logout();
+	}
+	
+	@Test(groups={"SmokeTest","Production"},priority=11) 
 	public void verifyQuickLookFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
 		.selectClothingDepartment()
-	//	.selectQuickLook()
 		.validateQuickLookScreen()
 		.navigateToHomePage()
 		.JJill_Logout();
 	}
 	
-	@Test(groups={"SmokeTest","Production"}) 
+	@Test(groups={"SmokeTest","Production"},priority=12) 
 	public void verifyForgotPasswordFunctionality() throws InterruptedException{
-		loginpage.JJillLogin_ForgotPassword();
+		loginpage.
+		JJillLogin_ForgotPassword()
+		.JJill_ValidateForgotPassword_Yahoo();
 	}
 	
 	@AfterMethod(alwaysRun=true)
 	public void tearDown() {
 		driver.close();
-		//driver.quit();
+	}
+	
+	@AfterTest(alwaysRun=true)
+	public void closeAll()
+	{
+	driver.quit();	
 	}
 
 }

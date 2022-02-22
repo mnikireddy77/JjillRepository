@@ -33,6 +33,10 @@ public @Data class TestData {
 	private String city;
 	
 	private String JJILLCC;
+	
+	private String searchData;
+	
+	
 
 	public String getFirstName() {
 		return firstName;
@@ -41,6 +45,8 @@ public @Data class TestData {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+	
+	
 
 	public String getLastName() {
 		return lastName;
@@ -152,5 +158,13 @@ public @Data class TestData {
 	public void setJJILLCC(String JJILLCC) {
 		this.JJILLCC = JJILLCC;
 	}
-		
+	
+	public String getSearchData() {
+		return searchData;
+	}
+
+	public void setSearchData(String searchData) {
+		this.searchData = searchData;
+	}
+	
 }
