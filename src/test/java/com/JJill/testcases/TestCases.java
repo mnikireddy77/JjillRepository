@@ -9,7 +9,7 @@ import pojo.TestData;
 import testbase.TestBase;
 import utilities.Utility;
 
-public class LoginTest extends TestBase{
+public class TestCases extends TestBase{
 	private static Utility util; 
 	private static LoginFunctionality loginpage;
 
@@ -22,7 +22,7 @@ public class LoginTest extends TestBase{
 		loginpage=new LoginFunctionality();
 	}
 	
-	@Test(groups={"SmokeTest","Production"}) 
+	@Test(groups={"SmokeTest"}) 
 	public void verifyLoginInFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
 		.ConnectingMethod()
@@ -48,6 +48,7 @@ public class LoginTest extends TestBase{
 	public void verifyPDPFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
 		.selectClothingDepartment()
+		.ConnectingMethodLogin_PDP()
 		.validatePdpPage()
 		.navigateToHomePage()
 		.JJill_Logout();
@@ -57,6 +58,7 @@ public class LoginTest extends TestBase{
 	public void verifyPLPFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
 		.selectSaleDepartment()
+		.ConnectingMethodLogin_PLP()
 		.validatePlpPage()
 		.JJill_Logout();
 	}
@@ -64,6 +66,7 @@ public class LoginTest extends TestBase{
 	@Test(groups={"SmokeTest","Production"})
 	public void verifySearchFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
+		.ConnectingMethodLogin_PLP()
 		.validateSearchFunctionality()
 		.navigateToHomePage()
 		.JJill_Logout();
@@ -72,6 +75,7 @@ public class LoginTest extends TestBase{
 	@Test(groups={"SmokeTest","Production"})
 	public void verifyCompletetheLook() throws InterruptedException{
 		loginpage.JJill_Login()
+		.ConnectingMethodLogin_PLP()
 		.validateCompletetheLook()
 		.JJill_Logout();
 	}
@@ -80,6 +84,7 @@ public class LoginTest extends TestBase{
 	public void verifyShoptheLook() throws InterruptedException{
 		loginpage.JJill_Login()
 		.selectSTLDepartment()
+		.ConnectingMethodLogin_PLP()
 		.validateSTLPlpPage()
 		.JJill_STLLogout();
 	}
@@ -88,6 +93,7 @@ public class LoginTest extends TestBase{
 	public void verifyMonetateBadging() throws InterruptedException{
 		loginpage.JJill_Login()
 		.selectSaleDepartment()
+		.ConnectingMethodLogin_Pagination()
 		.validateMonetateBadging()
 		.JJill_Logout();
 	}
@@ -97,6 +103,7 @@ public class LoginTest extends TestBase{
 	public void verifyPaginationFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
 		.selectClothingDepartment()
+		.ConnectingMethodLogin_Pagination()
 		.selectPaginationOption()
 		.JJill_Logout();
 	}
@@ -104,6 +111,7 @@ public class LoginTest extends TestBase{
 	@Test(groups={"SmokeTest","Production"}) 
 	public void verifyHeaderFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
+		.ConnectingMethodLogin_Header()
 		.validateHeader()
 		.JJill_Logout();
 	}
@@ -111,6 +119,7 @@ public class LoginTest extends TestBase{
 	@Test(groups={"SmokeTest","Production"}) 
 	public void verifyFooterFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
+		.ConnectingMethodLogin_Header()
 		.validateFooter()
 		.JJill_Logout();
 	}
@@ -118,16 +127,18 @@ public class LoginTest extends TestBase{
 	@Test(groups={"SmokeTest","Production"},priority=10) 
 	public void verifyInventoryData() throws InterruptedException{
 		loginpage.JJill_Login()
+		.ConnectingMethodLogin_PDP()
 		.validateOOSFunctionality()
 		.validateLowInventoryFunctionality()
 		.validateBackOrderedFunctionality()
 		.JJill_Logout();
 	}
 	
-	@Test(groups={"SmokeTest","Production"},priority=11) 
+	@Test(groups={"SmokeTest"},priority=11) 
 	public void verifyQuickLookFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
 		.selectClothingDepartment()
+		.ConnectingMethodLogin_PDP()
 		.validateQuickLookScreen()
 		.navigateToHomePage()
 		.JJill_Logout();
