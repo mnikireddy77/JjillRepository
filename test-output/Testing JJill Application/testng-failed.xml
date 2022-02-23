@@ -7,18 +7,24 @@
   <test name="Test for the JJill application(failed)">
     <groups>
       <run>
-        <include name="h"/>
+        <include name="Production"/>
       </run>
     </groups>
     <classes>
-      <class name="com.JJill.testcases.LoginTest">
+      <class name="com.JJill.testcases.TestCases">
         <methods>
           <include name="setup"/>
+          <include name="verifyHeaderFunctionality"/>
+          <include name="verifyMonetateBadging"/>
           <include name="closeAll"/>
-          <include name="tearDown"/>
+          <include name="verifyForgotPasswordFunctionality"/>
+          <include name="verifyShoptheLook"/>
           <include name="verifyInventoryData"/>
+          <include name="verifyPDPFunctionality"/>
+          <include name="tearDown"/>
+          <include name="verifyLoginInFunctionality"/>
         </methods>
-      </class> <!-- com.JJill.testcases.LoginTest -->
+      </class> <!-- com.JJill.testcases.TestCases -->
     </classes>
   </test> <!-- Test for the JJill application(failed) -->
 </suite> <!-- Failed suite [Testing JJill Application] -->

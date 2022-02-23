@@ -134,17 +134,8 @@ public class LoginFunctionality extends ElementOperations {
 		btnsignin.click();
 		Reporter.log("Login Successful", true);
 		Thread.sleep(500);
-		/*
-		 * try { Thread.sleep(500); if(promotionbox.isDisplayed()) {
-		 * driver.switchTo().frame(promotionbox); btnclose.click();
-		 * driver.switchTo().parentFrame(); Thread.sleep(50); }}
-		 */
-		/*
-		 * finally {
-		 */
 		String title = driver.getTitle();
 		Assert.assertEquals(title, "Women's apparel, accessories, and footwear from J.Jill");
-		/* } */
 
 		return new AddProduct_CheckoutFunctionality();
 	}
@@ -272,6 +263,7 @@ public class LoginFunctionality extends ElementOperations {
 		Reporter.log("Fetched the useremail and password from the test data sheet successfully", true);
 
 	}
+	
 	
 	
 
