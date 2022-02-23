@@ -12,7 +12,7 @@
     </run>
     </groups>
          <classes>
-             <class name="com.JJill.testcases.LoginTest">
+             <class name="com.JJill.testcases.TestCases">
               <methods> 
            <!--   <include name="verifyForgotPasswordFunctionality"/>   --> 
               <!--  <include name="verifyPaginationFunctionality"/>  -->

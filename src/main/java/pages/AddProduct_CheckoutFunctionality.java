@@ -32,6 +32,8 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations {
 
 	// Object Repository
 
+
+	
 	@FindBy(xpath = "//iframe[@frameborder='0']")
 	WebElement promotionbox;
 
@@ -143,10 +145,13 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations {
 	@FindBy(xpath = "(//div[contains(@id,'product')])[2] /div /div[1]")
 	WebElement selectitem;
 
-	@FindBy(xpath = "(//div[contains(@id,'product')])[4] /div /div[2] /a/h6")
+	@FindBy(xpath = "(//div[contains(@id,'product')])[7] /div /div[2] /a/h6")
 	WebElement selectitemdescription;
+	
+	@FindBy(xpath = "//button[@title='Remove Offer']")
+	WebElement btnremoveoffer;
 
-	@FindBy(xpath = "(//span[contains(text(),'Quick Look')])[1]")
+	@FindBy(xpath = "(//span[contains(text(),'Quick Look')])[2]")
 	WebElement btnquicklook;
 
 	@FindBy(xpath = "(//div[contains(@id,'product')])[2] /div /div[1] /div[1]")
@@ -353,7 +358,7 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations {
 	@FindBy(xpath = "(//p[contains(@class,'MuiTypography-body1')])[7]")
 	WebElement txtbtnColorName;
 
-	@FindBy(xpath = "(//p[contains(@class,'MuiTypography-body1')])[10]")
+	@FindBy(xpath = "(//p[contains(@class,'MuiTypography-body1')])[14]")
 	WebElement ql_txtbtnColorName;
 
 	@FindBy(xpath = "(//div[@data-id='ProductOptionSelector'])[3]/div[3]/button")
@@ -615,6 +620,7 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations {
 		PageFactory.initElements(driver, this);
 	}
 
+	//Select Department
 	public AddProduct_CheckoutFunctionality selectClothingDepartment() throws InterruptedException {
 		Reporter.log("Select the department", true);
 		Thread.sleep(4000);
@@ -670,106 +676,8 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations {
 		return new AddProduct_CheckoutFunctionality();
 	}
 
-
-	public AddProduct_CheckoutFunctionality validateQuickLookScreen() throws InterruptedException {
-		Reporter.log("Validate quicklook screen", true);
-		Thread.sleep(1000);
-		jse.executeScript("window.scrollBy(0,700)");
-		action.moveToElement(btnquicklook);
-		action.click(btnquicklook).build().perform();
-		Thread.sleep(1000);
-		for (int i = 0; i < 5; i++) {
-			Thread.sleep(1000);
-		}
-		Assert.assertEquals(ql_txtQuickLook.isDisplayed(), true);
-		Thread.sleep(200);
-		Assert.assertEquals(ql_heroimg.isDisplayed(), true);
-		Thread.sleep(400);
-		Assert.assertEquals(ql_sideimg.isDisplayed(), true);
-		Thread.sleep(50);
-		Assert.assertEquals(ql_ItemDescription.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(ql_bazaarvoice.isDisplayed(), true);
-		Thread.sleep(20);
-		try {
-			ql_bazaarvoice.click();
-		} catch (Exception e) {
-			Reporter.log("QL Bazaarvoice is not clickable", true);
-		}
-		Assert.assertEquals(ql_btnsizetype.isDisplayed(), true);
-		Thread.sleep(20);
-
-		for (int i = 0; i < pdpbtnsizetype.size(); i++) {
-			pdpbtnsizetype.get(i).click();
-			String size = pdpbtnsizetype.get(i).getAttribute("title");
-			Reporter.log(size);
-		}
-		pdpbtnsizetype.get(0).click();
-		Thread.sleep(20);
-		for (int i = 0; i < PDP_btncolor.size(); i++) {
-			PDP_btncolor.get(i).click();
-			Thread.sleep(5);
-			String name = ql_txtbtnColorName.getText();
-			System.out.println(name);
-		}
-		jse.executeScript("window.scrollBy(0,100)");
-		Assert.assertEquals(ql_btnsize.isDisplayed(), true);
-		Thread.sleep(50);
-		ql_btnsize.click();
-		Thread.sleep(50);
-		action.sendKeys(Keys.PAGE_DOWN).build().perform();
-		Assert.assertEquals(ql_sizeguide.isDisplayed(), true);
-		Thread.sleep(20);
-		ql_sizeguide.click();
-		if (sizeguidepopup.isDisplayed()) {
-			Assert.assertEquals(sizeguidepopup.isDisplayed(), true);
-			Thread.sleep(20);
-			ql_btnsizepopupClose.click();
-		}
-
-		Assert.assertEquals(ql_fitpredicator.isDisplayed(), true);
-		Thread.sleep(20);
-		ql_fitpredicator.click();
-		if (fitpredicatorpopup.isDisplayed()) {
-			Assert.assertEquals(fitpredicatorpopup.isDisplayed(), true);
-			Thread.sleep(20);
-			fitpredicatorclose.click();
-			Thread.sleep(20);
-		}
-		jse.executeScript("window.scrollBy(0,100)");
-		if (ql_quantityadd.isDisplayed()) {
-			Thread.sleep(20);
-			ql_quantityadd.click();
-			String qty = ql_quantityvalue.getAttribute("value");
-			System.out.print(qty);
-			Assert.assertEquals(qty, "2");
-		}
-		if (ql_quantitysub.isDisplayed()) {
-			Thread.sleep(20);
-			ql_quantitysub.click();
-			String qty = ql_quantityvalue.getAttribute("value");
-			System.out.print(qty);
-			Assert.assertEquals(qty, "1");
-		}
-		Assert.assertEquals(btnaddtobag.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(ql_saveforlater.isDisplayed(), true);
-		Thread.sleep(20);
-		if (ql_saveforlater.isDisplayed()) {
-			ql_saveforlater.click();
-			Thread.sleep(20);
-			Assert.assertEquals(ql_saveforlaterpopup.isDisplayed(), true);
-			Thread.sleep(20);
-			ql_btnsizepopupClose.click();
-		}
-		Assert.assertEquals(ql_fulldetails.isDisplayed(), true);
-		Thread.sleep(20);
-		btnaddtobag.click();
-		btnviewshoppingcart.click();
-		Reporter.log("quicklook validation successful", true);
-		return new AddProduct_CheckoutFunctionality();
-	}
-
+	//Select Department
+	
 	public AddProduct_CheckoutFunctionality selectItemDetails() throws InterruptedException {
 		Reporter.log("Select the Item", true);
 		driver.switchTo().frame(promotionbox);
@@ -793,764 +701,8 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations {
 		return this;
 	}
 
-	public LoginFunctionality validateMonetateBadging() throws InterruptedException {
-		Reporter.log("Validate the Monetate Badging", true);
-		int count = 1;
-		int pagecount = 1;
-		try {
-			while (btnnexttop.isDisplayed()) {
-				btnnexttop.click();
-				Thread.sleep(500);
-				pagecount++;
-				Thread.sleep(500);
-			}
-		} catch (Exception e) {
-			System.out.println(pagecount);
-		}
-		for (int j = 0; j < pagecount; j++) {
-			jse.executeScript("window.scrollBy(0,400)");
-			int size = imgPLP.size();
-			for (int i = 0; i < monetatebadge.size(); i++) {
-				System.out.println(monetatebadge.get(i));
-				System.out.println(monetatebadge.size() + " akdjf" + i);
-				System.out.println(txt_itemdesc.get(i).getText());
-				Assert.assertEquals(monetatebadge.get(i).isDisplayed(), true);
-				if (i < monetatebadge.size() - 1 && count % 3 == 0) {
-					jse.executeScript("window.scrollBy(0,300)");
-					Thread.sleep(1000);
-					jse.executeScript("window.scrollBy(0,300)");
-				}
-				Thread.sleep(50);
-				count++;
-			}
-			jse.executeScript("window.scrollBy(0,500)");
-			try {
-				// System.out.println(pagecount);
-				jse.executeScript("window.scrollBy(0,-200)");
-				Thread.sleep(500);
-				btnpreviousbottom.click();
-				Thread.sleep(1500);
-			}
-		
-			catch (Exception e) {
-				Thread.sleep(1000);
-			}
-		}
-		for (int i = 0; i < 15; i++) {
-			Thread.sleep(1000);
-			jse.executeScript("window.scrollBy(0,-700)");
-		}
-		Thread.sleep(1000);
-		Reporter.log("Monetate Badging validated sucessfully", true);
-		// }
-		return new LoginFunctionality();
-	}
-
-	public LoginFunctionality validateHeader() throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		Reporter.log("Validate Header Functioanality", true);
-		Thread.sleep(20);
-		try {
-			driver.switchTo().frame(promotionbox);
-			btnclose.click();
-			driver.switchTo().parentFrame();
-			Thread.sleep(1000);
-		} finally {
-			if (btn_headernewarrivals.isDisplayed()) {
-				Thread.sleep(20);
-				btn_headernewarrivals.click();
-				Thread.sleep(20);
-				Assert.assertEquals(newarrivalsbreadcrumbs.isDisplayed(), true);
-
-			}
-			if (btn_headerclothing.isDisplayed()) {
-				btn_headerclothing.click();
-				Thread.sleep(20);
-				Assert.assertEquals(clothingbreadcrumbs.isDisplayed(), true);
-
-			}
-			if (btn_headershoes.isDisplayed()) {
-				Thread.sleep(100);
-				btn_headershoes.click();
-				Thread.sleep(1000);
-				Assert.assertEquals(shoesbreadcrumbs.isDisplayed(), true);
-			}
-			if (btn_headerinspiration.isDisplayed()) {
-				btn_headerinspiration.click();
-				Thread.sleep(20);
-				Assert.assertEquals(inspirationbreadcrumbs.isDisplayed(), true);
-
-			}
-			if (btn_headersale.isDisplayed()) {
-				btn_headersale.click();
-				Thread.sleep(20);
-				Assert.assertEquals(salebreadcrumbs.isDisplayed(), true);
-
-			}
-			if (btn_headerstores.isDisplayed()) {
-				btn_headerstores.click();
-				Thread.sleep(20);
-				Assert.assertEquals(storebreadcrumbs.isDisplayed(), true);
-				Storestologo.click();
-			}
-			Assert.assertEquals(headerlogo.isDisplayed(), true);
-			Thread.sleep(20);
-			Assert.assertEquals(btn_headershoppingbag.isDisplayed(), true);
-			Thread.sleep(20);
-			Assert.assertEquals(btn_headerprofilebutton.isDisplayed(), true);
-			Thread.sleep(20);
-			Reporter.log("Validated Header Functionality successfully", true);
-		}
-		return new LoginFunctionality();
-	}
-
-	public LoginFunctionality validateFooter() throws InterruptedException {
-		Reporter.log("Validate Footer Functioanality", true);
-		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-		for (int i = 0; i < 10; i++) {
-			jse.executeScript("window.scrollBy(0,600)");
-		}
-		Thread.sleep(20);
-		Assert.assertEquals(txt_FooterNeedHelp.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(txt_FooterCustomerService.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(txt_FooterAboutJJILL.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(txt_FooterGiftCard.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(txt_FooterCreditCard.isDisplayed(), true);
-		Thread.sleep(20);
-		try {
-			driver.switchTo().frame(promotionbox);
-			btnclose.click();
-			driver.switchTo().parentFrame();
-			Thread.sleep(1000);
-		} finally {
-			Thread.sleep(20);
-		}
-		if (btn_FooterEmailus.isDisplayed()) {
-			Thread.sleep(20);
-			btn_FooterEmailus.click();
-			btn_emailus.click();
-		}
-		if (btn_FooterChat.isDisplayed()) {
-			Thread.sleep(20);
-			btn_FooterChat.click();
-			Footerchatpopupbutton.click();
-		}
-		if (btn_FooterContactUs.isDisplayed()) {
-			Thread.sleep(20);
-			btn_FooterContactUs.click();
-			Assert.assertEquals(FooterContactUsPage.isDisplayed(), true);
-			driver.navigate().back();
-			for (int j = 0; j < 3; j++) {
-				jse.executeScript("window.scrollBy(0,1200)");
-				Thread.sleep(20);
-			}
-		}
-		if (btn_FooterFAQ.isDisplayed()) {
-
-			Thread.sleep(20);
-			btn_FooterFAQ.click();
-			Assert.assertEquals(FooterFAQpage.isDisplayed(), true);
-			driver.navigate().back();
-			for (int j = 0; j < 4; j++) {
-				jse.executeScript("window.scrollBy(0,1200)");
-				Thread.sleep(20);
-			}		}
-		if (btn_FooterOrderStatus.isDisplayed()) {
-			Thread.sleep(20);
-			btn_FooterOrderStatus.click();
-			Thread.sleep(20);
-			Assert.assertEquals(FooterOrderStatuspage.isDisplayed(), true);
-			driver.navigate().back();
 			
-		}
-		if (btn_FooterRequestCatalog.isDisplayed()) {
-			Thread.sleep(20);
-			btn_FooterRequestCatalog.click();
-			Assert.assertEquals(FooterRequestCatalogpage.isDisplayed(), true);
-			driver.navigate().back();
-			
-		}
-		if (btn_FooterShipping.isDisplayed()) {
-			Thread.sleep(20);
-			btn_FooterShipping.click();
-			Assert.assertEquals(FooterShippingpage.isDisplayed(), true);
-			driver.navigate().back();
-			for (int j = 0; j < 5; j++) {
-				jse.executeScript("window.scrollBy(0,1200)");
-				Thread.sleep(20);
-			}
-		}
-		if (btn_FooterReturns.isDisplayed()) {
-			Thread.sleep(20);
-			btn_FooterReturns.click();
-			Assert.assertEquals(FooterReturnspage.isDisplayed(), true);
-			driver.navigate().back();
-			for (int j = 0; j < 5; j++) {
-				jse.executeScript("window.scrollBy(0,1200)");
-				Thread.sleep(20);
-			}
-		}
-		if (btn_FooterSizeGuide.isDisplayed()) {
-			Thread.sleep(20);
-			btn_FooterSizeGuide.click();
-			Assert.assertEquals(FooterSizeGuidepage.isDisplayed(), true);
-			driver.navigate().back();
-			for (int j = 0; j < 5; j++) {
-				jse.executeScript("window.scrollBy(0,1200)");
-				Thread.sleep(20);
-			}
-		}
-		if (btn_FooterSpecialOffer.isDisplayed()) {
-			Thread.sleep(20);
-			btn_FooterSpecialOffer.click();
-			Assert.assertEquals(FooterSpecialOfferpage.isDisplayed(), true);
-			driver.navigate().back();
-			
-		}
-		if (btn_Footerwhoweare.isDisplayed()) {
-			Thread.sleep(20);
-			btn_Footerwhoweare.click();
-			Assert.assertEquals(Footerwhowearepage.isDisplayed(), true);
-			driver.navigate().back();
-			
-		}
-		if (btn_Footercompassionfund.isDisplayed()) {
-			Thread.sleep(20);
-			btn_Footercompassionfund.click();
-			Assert.assertEquals(Footercompassionfundpage.isDisplayed(), true);
-			driver.navigate().back();
-			for (int j = 0; j < 5; j++) {
-				jse.executeScript("window.scrollBy(0,1200)");
-				Thread.sleep(20);
-			}
-		}
-		if (btn_Footerperfectfit.isDisplayed()) {
-			Thread.sleep(20);
-			btn_Footerperfectfit.click();
-			Assert.assertEquals(FooterSizeGuidepage.isDisplayed(), true);
-			driver.navigate().back();
-			for (int j = 0; j < 5; j++) {
-				jse.executeScript("window.scrollBy(0,1200)");
-				Thread.sleep(20);
-			}
-		}
-		if (btn_FooterSocialResponsibility.isDisplayed()) {
-			Thread.sleep(20);
-			btn_FooterSocialResponsibility.click();
-			Assert.assertEquals(FooterSocialResponsibilitypage.isDisplayed(), true);
-			driver.navigate().back();
-			for (int j = 0; j < 5; j++) {
-				jse.executeScript("window.scrollBy(0,1200)");
-				Thread.sleep(20);
-			}
-		}
-		if (btn_Footercalifornia.isDisplayed()) {
-			Thread.sleep(20);
-			btn_Footercalifornia.click();
-			Assert.assertEquals(Footercaliforniapage.isDisplayed(), true);
-			driver.navigate().back();
-			for (int j = 0; j < 5; j++) {
-				jse.executeScript("window.scrollBy(0,1200)");
-				Thread.sleep(20);
-			}
-		}
-		if (btn_Footeraccessibility.isDisplayed()) {
-			Thread.sleep(20);
-			btn_Footeraccessibility.click();
-			Assert.assertEquals(Footeraccessibilitypage.isDisplayed(), true);
-			driver.navigate().back();
-			for (int j = 0; j < 5; j++) {
-				jse.executeScript("window.scrollBy(0,1200)");
-				Thread.sleep(20);
-			}
-		}
-		if (btn_Footeregiftcard.isDisplayed()) {
-			Thread.sleep(20);
-			btn_Footeregiftcard.click();
-			Assert.assertEquals(Footeregiftcardpage.isDisplayed(), true);
-			driver.navigate().back();
-			
-		}
-		if (btn_Footergiftcard.isDisplayed()) {
-			Thread.sleep(20);
-			btn_Footergiftcard.click();
-			Assert.assertEquals(Footergiftcardpage.isDisplayed(), true);
-			driver.navigate().back();
-			}
-		if (btn_Footergiftservices.isDisplayed()) {
-			Thread.sleep(20);
-			btn_Footergiftservices.click();
-			Assert.assertEquals(Footergiftservicespage.isDisplayed(), true);
-			driver.navigate().back();
-			
-		}
-		
-		Assert.assertEquals(btn_FooterCallus.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(btn_FooterFeedback.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(btn_Footerlearnmore.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(btn_Footerapplynow.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(btn_Footeraccessyouraccount.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(btn_Footercarrers.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(btn_FooterInvestors.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(btn_FooterDoNotSell.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(btn_FooterTermsofUse.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(btn_FooterPrivacy.isDisplayed(), true);
-		Thread.sleep(20);
-		Reporter.log("Validated Footer Functionality successfully", true);
-
-		for (int i = 0; i < 10; i++) {
-			jse.executeScript("window.scrollBy(0,-600)");
-		}
-		
-
-		return new LoginFunctionality();
-	}
-
-	public AddProduct_CheckoutFunctionality validatePdpPage() throws InterruptedException {
-		Reporter.log("Validating the PDP Started", true);
-		jse.executeScript("window.scrollBy(0,700)");
-		Thread.sleep(1000);
-		jse.executeScript("window.scrollBy(0,750)");
-		selectitemdescription.click();
-		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-		for (int i = 0; i < 7; i++) {
-			Thread.sleep(1000);
-		}
-		Assert.assertEquals(ql_heroimg.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(ql_sideimg.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(pdp_ItemDescription.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(pdp_bazaarvoice.isDisplayed(), true);
-		Thread.sleep(20);
-		for (int i = 0; i < pdpbtnsizetype.size(); i++) {
-			pdpbtnsizetype.get(i).click();
-			String size = pdpbtnsizetype.get(i).getAttribute("title");
-			Reporter.log(size);
-		}
-		pdpbtnsizetype.get(0).click();
-		Thread.sleep(20);
-		for (int i = 0; i < PDP_btncolor.size(); i++) {
-			PDP_btncolor.get(i).click();
-			Thread.sleep(5);
-			String name = txtbtnColorName.getText();
-			System.out.println(name);
-		}
-		jse.executeScript("window.scrollBy(0,100)");
-		Assert.assertEquals(btnsize.isDisplayed(), true);
-		Thread.sleep(20);
-		jse.executeScript("window.scrollBy(0,100)");
-		btnsize.click();
-		Thread.sleep(50);
-		Assert.assertEquals(ql_sizeguide.isDisplayed(), true);
-		Thread.sleep(20);
-		ql_sizeguide.click();
-		if (sizeguidepopup.isDisplayed()) {
-			Assert.assertEquals(sizeguidepopup.isDisplayed(), true);
-			Thread.sleep(20);
-			btnsizepopupClose.click();
-		}
-		Assert.assertEquals(ql_fitpredicator.isDisplayed(), true);
-		Thread.sleep(20);
-		ql_fitpredicator.click();
-		if (fitpredicatorpopup.isDisplayed()) {
-			Assert.assertEquals(fitpredicatorpopup.isDisplayed(), true);
-			Thread.sleep(20);
-			fitpredicatorclose.click();
-			Thread.sleep(20);
-		}
-		jse.executeScript("window.scrollBy(0,100)");
-		if (ql_quantityadd.isDisplayed()) {
-			Thread.sleep(20);
-			ql_quantityadd.click();
-			String qty = ql_quantityvalue.getAttribute("value");
-			System.out.print(qty);
-			Assert.assertEquals(qty, "2");
-		}
-		if (ql_quantitysub.isDisplayed()) {
-			Thread.sleep(20);
-			ql_quantitysub.click();
-			String qty = ql_quantityvalue.getAttribute("value");
-			System.out.print(qty);
-			Assert.assertEquals(qty, "1");
-		}
-		Assert.assertEquals(btnaddtobag.isDisplayed(), true);
-		Thread.sleep(20);
-		jse.executeScript("window.scrollBy(0,100)");
-		if (ql_saveforlater.isDisplayed()) {
-			ql_saveforlater.click();
-			Thread.sleep(20);
-			Assert.assertEquals(ql_saveforlaterpopup.isDisplayed(), true);
-			Thread.sleep(20);
-			btnsizepopupClose.click();
-		}
-		Assert.assertEquals(pdp_Sharethisproduct.size(), 3);
-		for (int i = 0; i < 3; i++) {
-			String parentwindow = driver.getWindowHandle();
-			pdp_Sharethisproduct.get(i).click();
-			Set<String> allWindowHandles = driver.getWindowHandles();
-			if (i == 0) {
-				for (String wh : allWindowHandles) {
-					driver.switchTo().window(wh);
-					String Title = driver.getTitle();
-					if (Title.contentEquals("Facebook"))
-						driver.close();
-				}
-			}
-			if (i == 1) {
-				for (String wh : allWindowHandles) {
-					driver.switchTo().window(wh);
-					System.out.println(driver.getWindowHandle());
-					String Title = driver.getTitle();
-					System.out.println(Title);
-					if (Title.contentEquals("Compose new Tweet / Twitter"))
-						driver.close();
-				}
-			}
-			if (i == 2) {
-				for (String wh : allWindowHandles) {
-					driver.switchTo().window(wh);
-					System.out.println(driver.getWindowHandle());
-					String Title = driver.getTitle();
-					System.out.println(Title);
-					if (Title.contentEquals("Pinterest"))
-						driver.close();
-				}
-			}
-			driver.switchTo().window(parentwindow);
-		}
-		Thread.sleep(20);
-		jse.executeScript("window.scrollBy(0,500)");
-		Assert.assertEquals(txtStyleNo.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(txtdetailscare.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertNotNull(txtdetailscare_msg.getText());
-		Thread.sleep(20);
-		Assert.assertEquals(txtreturns.isDisplayed(), true);
-		txtreturns.click();
-		Assert.assertNotNull(txtreturns_msg.getText());
-		Thread.sleep(20);
-		jse.executeScript("window.scrollBy(0,-500)");
-		btnaddtobag.click();
-		Thread.sleep(20);
-		btnviewshoppingcart.click();
-		Reporter.log("PDP Validation Sucessful", true);
-		return this;
-	}
-
-	public LoginFunctionality validatePlpPage() throws InterruptedException {
-		Reporter.log("Validating the PLP Started", true);
-		Thread.sleep(1000);
-		jse.executeScript("window.scrollBy(0,600)");
-		Thread.sleep(1000);
-		Assert.assertEquals(selectitem.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(btnquicklook.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(pdp_btnmonetatebadges.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(plp_btncolorswatches.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(selectitemdescription.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(plp_oldCost.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(plp_updatedCost.isDisplayed(), true);
-		Thread.sleep(20);
-		Assert.assertEquals(plp_reviews.isDisplayed(), true);
-		action.sendKeys(Keys.PAGE_UP).build().perform();
-		action.sendKeys(Keys.PAGE_UP).build().perform();
-		Reporter.log("PLP Validation Sucessful", true);
-		// }
-		return new LoginFunctionality();
-	}
-
-	public LoginFunctionality validateSTLPlpPage() throws InterruptedException {
-		Reporter.log("Adding STL item to Bag", true);
-		jse.executeScript("window.scrollBy(0,1000)");
-		Thread.sleep(1000);
-		try {
-			if (promotionbox.isDisplayed()) {
-				driver.switchTo().frame(promotionbox);
-				btnclose.click();
-				driver.switchTo().parentFrame();
-				Thread.sleep(50);
-			}
-		} finally {
-			btnSTL.click();
-			Thread.sleep(10000);
-			Assert.assertEquals(STLdesc.isDisplayed(), true);
-			Thread.sleep(20);
-			Assert.assertEquals(STLreviews.isDisplayed(), true);
-			Thread.sleep(20);
-			Assert.assertEquals(STLsizetype.isDisplayed(), true);
-			Thread.sleep(20);
-			Assert.assertEquals(STLcolorname.isDisplayed(), true);
-			Thread.sleep(20);
-			Assert.assertEquals(STLcolor.isDisplayed(), true);
-			Thread.sleep(20);
-			action.sendKeys(Keys.PAGE_DOWN).build().perform();
-			Assert.assertEquals(STLsize.isDisplayed(), true);
-			Thread.sleep(40);
-			STLsize_medium.click();
-			Thread.sleep(1000);
-			Assert.assertEquals(STLsizeguide.isDisplayed(), true);
-			Thread.sleep(20);
-			Assert.assertEquals(STLfitpredictor.isDisplayed(), true);
-			Thread.sleep(20);
-			Assert.assertEquals(STLqty.isDisplayed(), true);
-			Thread.sleep(20);
-			Assert.assertEquals(STLbtnATB.isDisplayed(), true);
-			Thread.sleep(20);
-			Assert.assertEquals(STLsaveforlater.isDisplayed(), true);
-			Thread.sleep(20);
-			Assert.assertEquals(STLfulldetails.isDisplayed(), true);
-			Thread.sleep(20);
-			action.sendKeys(Keys.PAGE_DOWN).build().perform();
-			Assert.assertEquals(STLNextButton.isDisplayed(), true);
-			Thread.sleep(20);
-			STLbtnATB.click();
-			Thread.sleep(1000);
-			action.sendKeys(Keys.PAGE_UP).build().perform();
-			Thread.sleep(1000);
-			action.sendKeys(Keys.PAGE_UP).build().perform();
-			Thread.sleep(1000);
-			for (int i = 0; i < 10; i++) {
-				Thread.sleep(1000);
-			}
-			Assert.assertEquals(txtATBConfirmation.getText(), "ADDED TO BAG");
-			STLbtnClose.click();
-			for (int i = 0; i < 10; i++) {
-				Thread.sleep(100);
-				action.sendKeys(Keys.PAGE_UP).build().perform();
-			}
-
-			Reporter.log("Added STL item to Bag sucesfully", true);
-		}
-		return new LoginFunctionality();
-	}
-
-	public AddProduct_CheckoutFunctionality validateSearchFunctionality() throws InterruptedException {
-		Reporter.log("Validating the Search Functionality Started", true);
-		Thread.sleep(2000);
-		txtSearch.click();
-		readValuesForSearch("Search_Data", "Search");
-		Reporter.log("Enter Search Data", true);
-		txtSearch.sendKeys(TestBase.testData.get().getSearchData());
-		Thread.sleep(500);
-		try {
-			if (promotionbox.isDisplayed()) {
-				driver.switchTo().frame(promotionbox);
-				btnclose.click();
-				driver.switchTo().parentFrame();
-				Thread.sleep(500);
-			}
-		} finally {
-			searchresults.click();
-			Thread.sleep(2000);
-			jse.executeScript("window.scrollBy(0,300)");
-			btnsize.click();
-			Thread.sleep(500);
-			jse.executeScript("window.scrollBy(0,100)");
-			btnaddtobag.click();
-			Thread.sleep(10);
-			btnviewshoppingcart.click();
-			Reporter.log("Seacrh Validation Sucessful", true);
-		}
-		return new AddProduct_CheckoutFunctionality();
-	}
-
-	public LoginFunctionality validateCompletetheLook() throws InterruptedException {
-		Reporter.log("Validating Complete the Look Functionality Started", true);
-		Thread.sleep(1000);
-		try {
-			Thread.sleep(2000);
-			if (promotionbox.isDisplayed()) {
-				driver.switchTo().frame(promotionbox);
-				btnclose.click();
-				driver.switchTo().parentFrame();
-				Thread.sleep(500);
-			}
-		} finally {
-			txtSearch.click();
-			readValuesForSearch("Search_Data", "CTL");
-			Reporter.log("Enter CTL Data", true);
-			txtSearch.sendKeys(TestBase.testData.get().getSearchData());
-			Thread.sleep(200);
-			Assert.assertEquals(searchresults.isDisplayed(), true);
-			Thread.sleep(100);
-			searchresults.click();
-			Thread.sleep(100);
-			jse.executeScript("window.scrollBy(0,700)");
-			action.sendKeys(Keys.PAGE_DOWN).build().perform();
-			Thread.sleep(500);
-			jse.executeScript("window.scrollBy(0,600)");
-			action.sendKeys(Keys.PAGE_DOWN).build().perform();
-			Thread.sleep(100);
-			Assert.assertEquals(txtCTL.isDisplayed(), true);
-			Thread.sleep(20);
-			int size = resultsCTL.size();
-			// Assert.assertEquals(size, 4);
-			Thread.sleep(20);
-			int imgsize = imagesCTL.size();
-			// Assert.assertEquals(imgsize, 24);
-			// jse.executeScript("window.scrollBy(0,400)");
-			action.sendKeys(Keys.PAGE_DOWN).build().perform();
-			for (int i = 0; i < size; i++) {
-				// System.out.println(itemdescCTL.get(i).getText());
-				Reporter.log(itemdescCTL.get(i).getText(), true);
-				Thread.sleep(20);
-				Assert.assertEquals(itemdeptCTL.get(i).isDisplayed(), true);
-				Thread.sleep(20);
-				Assert.assertEquals(itemcolorCTL.get(i).isDisplayed(), true);
-				Thread.sleep(20);
-				Assert.assertEquals(itemsizeCTL.get(i).isDisplayed(), true);
-				Thread.sleep(20);
-				Assert.assertEquals(itemATB_CTL.get(i).isDisplayed(), true);
-				Thread.sleep(20);
-				Assert.assertEquals(itemFullDetails_CTL.get(i).isDisplayed(), true);
-			}
-			Thread.sleep(20);
-			for (int j = 0; j < 6; j++) {
-				action.sendKeys(Keys.PAGE_UP).build().perform();
-				Thread.sleep(20);
-			}
-			Thread.sleep(1000);
-			Reporter.log("Complete the Look Functionality Sucessfully", true);
-		}
-		return new LoginFunctionality();
-	}
-	
-	public AddProduct_CheckoutFunctionality validateOOSFunctionality() throws InterruptedException {
-		Reporter.log("Validating the Out of Stock Functionality Started", true);
-		try {
-			Thread.sleep(2000);
-			if (promotionbox.isDisplayed()) {
-				driver.switchTo().frame(promotionbox);
-				btnclose.click();
-				driver.switchTo().parentFrame();
-				Thread.sleep(500);
-			}
-		} finally {
-		txtSearch.click();
-		readValuesForSearch("Search_Data", "OOS");
-		Reporter.log("Enter Sku Data", true);
-		txtSearch.sendKeys(TestBase.testData.get().getSearchData());
-		Thread.sleep(600);
-		
-		  try { if (promotionbox.isDisplayed()) {
-		  driver.switchTo().frame(promotionbox); btnclose.click();
-		  driver.switchTo().parentFrame(); Thread.sleep(500); } } finally {
-		 
-			searchresults.click();
-			Thread.sleep(2000);
-			jse.executeScript("window.scrollBy(0,300)");
-			btnOOSSize.click();
-			Thread.sleep(500);
-			String message= inventoryMessage.getText();
-			Assert.assertEquals(message, "SELECTEDCOLOR/SIZE UNAVAILABLE");
-			Reporter.log("OOS Validation Sucessful", true);
-			jse.executeScript("window.scrollBy(0,-300)");
-			action.click(headerlogo).perform();
-			Thread.sleep(100);
-		}
-		}
-		
-		return new AddProduct_CheckoutFunctionality();
-		
-	}
-	
-	public AddProduct_CheckoutFunctionality validateLowInventoryFunctionality() throws InterruptedException {
-		Reporter.log("Validating the LowInventory Functionality Started", true);
-		txtSearch.click();
-		readValuesForSearch("Search_Data", "LowInventory");
-		Reporter.log("Enter Sku Data", true);
-		txtSearch.sendKeys(TestBase.testData.get().getSearchData());
-		txtSearch.sendKeys(Keys.ENTER);
-			Thread.sleep(2000);
-			jse.executeScript("window.scrollBy(0,300)");
-			Thread.sleep(500);
-			String message= inventoryMessage.getText();
-			System.out.print(message);
-			Assert.assertEquals(message, "THIS IS ALMOST GONE, DON'T MISS OUT!");
-			Reporter.log("LowInventory Validation Sucessful", true);
-			jse.executeScript("window.scrollBy(0,-300)");
-			action.click(headerlogo).perform();
-		
-			Thread.sleep(100);
-
-		
-		return new AddProduct_CheckoutFunctionality();
-		
-	}
-	public LoginFunctionality validateBackOrderedFunctionality() throws InterruptedException {
-		Reporter.log("Validating the Backordered Functionality Started", true);
-		txtSearch.click();
-		readValuesForSearch("Search_Data", "BackOrdered");
-		Reporter.log("Enter Sku Data", true);
-		txtSearch.sendKeys(TestBase.testData.get().getSearchData());
-		txtSearch.sendKeys(Keys.ENTER);
-			Thread.sleep(2000);
-			jse.executeScript("window.scrollBy(0,300)");
-			Thread.sleep(500);
-			String message= inventoryMessageBO.getText();
-			System.out.print(message);
-			Assert.assertEquals(message, "BACKORDERED:");
-			Reporter.log("Backordered Validation Sucessful", true);
-			jse.executeScript("window.scrollBy(0,-300)");
-			action.click(headerlogo).perform();
-		
-			Thread.sleep(100);
-	
-		
-		return new LoginFunctionality();
-		
-	}
-
-
-	public LoginFunctionality selectPaginationOption() throws InterruptedException {
-		int i = pagenavigation.size();
-		System.out.println(i);
-		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
-		jse.executeScript("window.scrollBy(0,450)");
-		for (int j = 0; j < i; j++) {
-			try {
-				if (pagecontent.isDisplayed()) {
-					Thread.sleep(5000);
-					if (btnnexttop.isDisplayed()) {
-						Thread.sleep(5000);
-						btnnexttop.click();
-						System.out.println("NextButton is sucessfully clicked on page " + (Integer.valueOf(j) + 1));
-					}
-				}
-				Thread.sleep(2000);
-			} catch (Exception e) {
-				break;
-			}
-			Thread.sleep(5000);
-			jse.executeScript("window.scrollBy(0,500)");
-		}
-		Thread.sleep(5000);
-		jse.executeScript("window.scrollBy(0,-500)");
-		return new LoginFunctionality();
-	}
-
-	public AddProduct_CheckoutFunctionality checkoutProcess() throws InterruptedException {
+		public AddProduct_CheckoutFunctionality checkoutProcess() throws InterruptedException {
 		Reporter.log("Checkout Process Started", true);
 		Thread.sleep(10);
 		btncheckout.click();
@@ -1666,10 +818,38 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations {
 	}
 
 	public LoginFunctionality ConnectingMethod() throws InterruptedException {
-		Thread.sleep(1000);
+		
+		try {
+			if (promotionbox.isDisplayed()) {
+				Thread.sleep(500);
+				driver.switchTo().frame(promotionbox);
+				btnclose.click();
+				driver.switchTo().parentFrame();
+				Thread.sleep(50);
+			}
+		} finally {Thread.sleep(1000);}
 		return new LoginFunctionality();
 	}
 
+	public Header_Footer_Functionality ConnectingMethodLogin_Header() throws InterruptedException {
+		Thread.sleep(1000);
+		return new Header_Footer_Functionality();
+	}
+	
+	public PDP_QuickLook_Functionality ConnectingMethodLogin_PDP() throws InterruptedException {
+		Thread.sleep(1000);
+		return new PDP_QuickLook_Functionality();
+	}
+	
+	public PLP_Search_CLT_STL_Functionality ConnectingMethodLogin_PLP() throws InterruptedException {
+		Thread.sleep(1000);
+		return new PLP_Search_CLT_STL_Functionality();
+	}
+	
+	public Pagination_Monetate ConnectingMethodLogin_Pagination() throws InterruptedException {
+		Thread.sleep(1000);
+		return new Pagination_Monetate();
+	}	
 	public static void readValuesForcards(String sheetName, String scenario) {
 		Reporter.log("Fetch the Cards value from the test data sheet and set it", true);
 		TestBase.testData.get().setJJILLCC(util.readCellValue(sheetName, scenario, "JJILLCC"));
@@ -1686,11 +866,4 @@ public class AddProduct_CheckoutFunctionality extends ElementOperations {
 		TestBase.testData.get().setPhoneNumber(util.readCellValue(sheetName, scenario, "phoneNumber"));
 		Reporter.log("Fetched the Address Fields from the test data sheet", true);
 	}
-
-	public static void readValuesForSearch(String sheetName, String scenario) {
-		Reporter.log("Fetch the search data", true);
-		TestBase.testData.get().setSearchData(util.readCellValue(sheetName, scenario, "SearchData"));
-		Reporter.log("Fetched search data from the test data sheet successfully", true);
-	}
-
 }
