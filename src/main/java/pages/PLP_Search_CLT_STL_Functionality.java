@@ -100,7 +100,7 @@ public class PLP_Search_CLT_STL_Functionality extends ElementOperations{
        	@FindBy(xpath = "(//span[contains(text(),'View Shopping Bag')])[1]")
        	WebElement btnviewshoppingcart;
        	
-       	@FindBy(xpath = "(//span[@class='shop-link'])[2]")
+       	@FindBy(xpath = "(//span[@class='shop-link'])[1]")
     	WebElement btnSTL;
 
     	@FindBy(xpath = "//div[@class='hidden-xs'] /h3[contains(@class,'sub-head ')]")
@@ -280,14 +280,10 @@ public class PLP_Search_CLT_STL_Functionality extends ElementOperations{
 			Thread.sleep(1000);
 			jse.executeScript("window.scrollBy(0,700)");
 			Thread.sleep(1000);
-			try {
-				if (promotionbox.isDisplayed()) {
-					driver.switchTo().frame(promotionbox);
-					btnclose.click();
-					driver.switchTo().parentFrame();
-					Thread.sleep(50);
-				}
-			} finally {
+			  try { if (promotionbox.isDisplayed()) {
+			  driver.switchTo().frame(promotionbox); btnclose.click();
+			  driver.switchTo().parentFrame(); Thread.sleep(50); } } finally {
+				  
 				btnSTL.click();
 				Thread.sleep(10000);
 				Assert.assertEquals(STLdesc.isDisplayed(), true);
@@ -334,7 +330,7 @@ public class PLP_Search_CLT_STL_Functionality extends ElementOperations{
 				for (int i = 0; i < 10; i++) {
 					Thread.sleep(100);
 					action.sendKeys(Keys.PAGE_UP).build().perform();
-				}
+			}
 
 				Reporter.log("Added STL item to Bag sucesfully", true);
 			}
