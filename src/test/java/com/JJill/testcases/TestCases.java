@@ -80,6 +80,14 @@ public class TestCases extends TestBase{
 		.JJill_Logout();
 	}
 	
+	@Test(groups={"SmokeTest","Production"})
+	public void verifyPDP_CompletetheLook() throws InterruptedException{
+		loginpage.JJill_Login()
+		.ConnectingMethodLogin_PLP()
+		.validatePDPCompletetheLook()
+		.JJill_Logout();
+	}
+	
 	@Test(groups={"SmokeTest","Production"}) 
 	public void verifyShoptheLook() throws InterruptedException{
 		loginpage.JJill_Login()
