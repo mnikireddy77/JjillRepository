@@ -64,6 +64,9 @@ public class PLP_Search_CLT_STL_Functionality extends ElementOperations{
 		@FindBy(xpath = "//ul[@data-ui='thumbnails'] /li[1]")
 		WebElement searchresults;
 
+		@FindBy(xpath = "(//div[@data-id='ProductOptionSelector'])[1] /div//button")
+		List<WebElement> PDPSizeType;
+		
 		@FindBy(xpath = "//p[contains(text(),'complete the look')]")
 		WebElement txtCTL;
 
@@ -76,7 +79,7 @@ public class PLP_Search_CLT_STL_Functionality extends ElementOperations{
 		@FindBy(xpath = "//p[contains(text(),'complete the look')]/../ul/li/div/div[1]/div[2]/div/div[1]")
 		List<WebElement> itemdescCTL;
 
-		@FindBy(xpath = "//p[contains(text(),'complete the look')]/../ul/li/div/div[1]/div[2]/div/div[2]/div/div")
+		@FindBy(xpath = "//p[contains(text(),'complete the look')]/../ul/li/div/div[1]/div[2]/div/div[2]/div/div/div/span/span")
 		List<WebElement> itemdeptCTL;
 
 		@FindBy(xpath = "//p[contains(text(),'complete the look')]/../ul/li/div/div[1]/div[2]/div/div[3]/div/div")
@@ -273,6 +276,66 @@ public class PLP_Search_CLT_STL_Functionality extends ElementOperations{
 			}
 			return new LoginFunctionality();
 		}
+		
+		public LoginFunctionality validatePDPCompletetheLook() throws InterruptedException {
+			Reporter.log("Validating PDP and Complete the Look Size Functionality Started", true);
+			Thread.sleep(1000);
+			try {
+				Thread.sleep(2000);
+				if (promotionbox.isDisplayed()) {
+					driver.switchTo().frame(promotionbox);
+					btnclose.click();
+					driver.switchTo().parentFrame();
+					Thread.sleep(500);
+				}
+			} finally {
+				txtSearch.click();
+				readValuesForSearch("Search_Data", "CTL");
+				Reporter.log("Enter CTL Data", true);
+				txtSearch.sendKeys(TestBase.testData.get().getSearchData());
+				Thread.sleep(200);
+				Assert.assertEquals(searchresults.isDisplayed(), true);
+				Thread.sleep(100);
+				searchresults.click();
+				Thread.sleep(100);
+			int sizetype=	PDPSizeType.size();
+			for(int j=0;j<sizetype;j++)
+			{
+				PDPSizeType.get(j).click();
+				String PDPsizetype= PDPSizeType.get(j).getAttribute("title");
+				jse.executeScript("window.scrollBy(0,700)");
+				action.sendKeys(Keys.PAGE_DOWN).build().perform();
+				Thread.sleep(500);
+				jse.executeScript("window.scrollBy(0,600)");
+			//	action.sendKeys(Keys.PAGE_DOWN).build().perform();
+				Thread.sleep(100);
+				Assert.assertEquals(txtCTL.isDisplayed(), true);
+				Thread.sleep(20);
+				int size = resultsCTL.size();
+				Thread.sleep(20);
+				int imgsize = imagesCTL.size();
+				action.sendKeys(Keys.PAGE_DOWN).build().perform();
+				for (int i = 0; i < size; i++) {
+					Reporter.log(itemdescCTL.get(i).getText(), true);
+					Thread.sleep(20);
+					Assert.assertEquals(itemdeptCTL.get(i).isDisplayed(), true);
+					Thread.sleep(20);
+					if(itemdeptCTL.get(i).getText().equalsIgnoreCase(PDPsizetype)||itemdeptCTL.get(i).getText().equalsIgnoreCase("Shoes & Accessories"))
+					Reporter.log("Size Type validation in PDP and Complete the Look is matching", true);
+					Thread.sleep(20);
+					}
+				for (int k = 0; k < 6; k++) {
+					action.sendKeys(Keys.PAGE_UP).build().perform();
+					Thread.sleep(20);
+				}
+			}
+				
+				Thread.sleep(1000);
+				Reporter.log("Complete the Look Size validation Functionality validated Sucessfully", true);
+			}
+			return new LoginFunctionality();
+		}
+		
 
 		public LoginFunctionality validateSTLPlpPage() throws InterruptedException {
 			Reporter.log("Adding STL item to Bag", true);
