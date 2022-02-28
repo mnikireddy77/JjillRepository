@@ -14,15 +14,14 @@
       <class name="com.JJill.testcases.TestCases">
         <methods>
           <include name="setup"/>
-          <include name="verifyHeaderFunctionality"/>
           <include name="verifyMonetateBadging"/>
           <include name="closeAll"/>
           <include name="verifyForgotPasswordFunctionality"/>
           <include name="verifyShoptheLook"/>
           <include name="verifyInventoryData"/>
-          <include name="verifyPDPFunctionality"/>
           <include name="tearDown"/>
-          <include name="verifyLoginInFunctionality"/>
+          <include name="verifySearchFunctionality"/>
+          <include name="verifyPaginationFunctionality"/>
         </methods>
       </class> <!-- com.JJill.testcases.TestCases -->
     </classes>

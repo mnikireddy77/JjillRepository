@@ -456,6 +456,17 @@ public class PDP_QuickLook_Functionality extends ElementOperations{
 			Reporter.log("Enter Sku Data", true);
 			txtSearch.sendKeys(TestBase.testData.get().getSearchData());
 			txtSearch.sendKeys(Keys.ENTER);
+		/*	try {
+				Thread.sleep(2000);
+				if (promotionbox.isDisplayed()) {
+					driver.switchTo().frame(promotionbox);
+					btnclose.click();
+					driver.switchTo().parentFrame();
+					Thread.sleep(500);
+				}
+			} finally {			
+		
+			*/
 				Thread.sleep(2000);
 				jse.executeScript("window.scrollBy(0,300)");
 				Thread.sleep(500);
@@ -467,7 +478,7 @@ public class PDP_QuickLook_Functionality extends ElementOperations{
 				action.click(headerlogo).perform();
 			
 				Thread.sleep(100);
-		
+		//	}
 			
 			return new LoginFunctionality();
 			
