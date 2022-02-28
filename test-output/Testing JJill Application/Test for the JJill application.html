@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test for the JJill application</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>5/7/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>5/6/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Feb 23 15:26:13 EST 2022</td>
+<td>Started on:</td><td>Mon Feb 28 08:50:53 EST 2022</td>
 </tr>
-<tr><td>Total time:</td><td>1299 seconds (1299065 ms)</td>
+<tr><td>Total time:</td><td>1025 seconds (1025713 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td>Production </td>
 </tr><tr>
@@ -76,10 +76,10 @@ function toggleAllBoxes() {
 </tr>
 <tr>
 <td title='com.JJill.testcases.TestCases.verifyForgotPasswordFunctionality()'><b>verifyForgotPasswordFunctionality</b><br>Test class: com.JJill.testcases.TestCases<br/>
-<a href="#Output-572317063" onClick='toggleBox("Output-572317063", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1031581596" onClick='toggleBox("Output-1031581596", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-572317063" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-572317063">
+<a href="#Output-1031581596" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1031581596">
 Fetch the useremail and password from the test data sheet and set it<br/>
 Fetched the useremail and password from the test data sheet successfully<br/>
 Enter Username<br/>
@@ -88,43 +88,35 @@ Logging into Yahoo mail to check the Forgot Password email<br/>
 Fetch the useremail and password from the test data sheet and set it<br/>
 Fetched the useremail and password from the test data sheet successfully<br/>
 Enter Username and Password<br/>
-Logged into yahoo mail sucessfully<br/>
 </div>
 </td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//b[contains(text(),&apos;reset&apos;)]&quot;}
+<td><div><pre>org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 50.000
   (Session info: chrome=98.0.4758.102)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;QU1980&apos;, ip: &apos;10.0.0.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:52082}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 64a6c1dacc0e9e07e791926895da1452
-*** Element info: {Using=xpath, value=//b[contains(text(),&apos;reset&apos;)]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:57569}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 8bab158edf079a1c26bb21e558857e02
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy12.isDisplayed(Unknown Source)
-	at pages.LoginFunctionality.JJill_ValidateForgotPassword_Yahoo(LoginFunctionality.java:228)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
+	at pages.LoginFunctionality.JJill_ValidateForgotPassword_Yahoo(LoginFunctionality.java:174)
 	at com.JJill.testcases.TestCases.verifyForgotPasswordFunctionality(TestCases.java:151)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace572317063", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace572317063'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//b[contains(text(),&apos;reset&apos;)]&quot;}
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1031581596", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1031581596'><pre>org.openqa.selenium.TimeoutException: timeout: Timed out receiving message from renderer: 50.000
   (Session info: chrome=98.0.4758.102)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;QU1980&apos;, ip: &apos;10.0.0.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:52082}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 64a6c1dacc0e9e07e791926895da1452
-*** Element info: {Using=xpath, value=//b[contains(text(),&apos;reset&apos;)]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:57569}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 8bab158edf079a1c26bb21e558857e02
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -136,14 +128,14 @@ Session ID: 64a6c1dacc0e9e07e791926895da1452
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy12.isDisplayed(Unknown Source)
-	at pages.LoginFunctionality.JJill_ValidateForgotPassword_Yahoo(LoginFunctionality.java:228)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
+	at pages.LoginFunctionality.JJill_ValidateForgotPassword_Yahoo(LoginFunctionality.java:174)
 	at com.JJill.testcases.TestCases.verifyForgotPasswordFunctionality(TestCases.java:151)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
@@ -171,92 +163,28 @@ Session ID: 64a6c1dacc0e9e07e791926895da1452
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>595</td>
-<td>com.JJill.testcases.TestCases@26b3fd41</td></tr>
-<tr>
-<td title='com.JJill.testcases.TestCases.verifyHeaderFunctionality()'><b>verifyHeaderFunctionality</b><br>Test class: com.JJill.testcases.TestCases<br/>
-<a href="#Output-1106488049" onClick='toggleBox("Output-1106488049", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-1106488049" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1106488049">
-Fetch the useremail and password from the test data sheet and set it<br/>
-Fetched the useremail and password from the test data sheet successfully<br/>
-Enter Username and Password<br/>
-Login Successful<br/>
-Validate Header Functioanality<br/>
-</div>
-</td>
-<td><div><pre>java.lang.AssertionError: expected [true] but found [false]
-	at pages.Header_Footer_Functionality.validateHeader(Header_Footer_Functionality.java:274)
-	at com.JJill.testcases.TestCases.verifyHeaderFunctionality(TestCases.java:115)
-... Removed 31 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1106488049", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1106488049'><pre>java.lang.AssertionError: expected [true] but found [false]
-	at org.testng.Assert.fail(Assert.java:94)
-	at org.testng.Assert.failNotEquals(Assert.java:513)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:135)
-	at org.testng.Assert.assertEquals(Assert.java:116)
-	at org.testng.Assert.assertEquals(Assert.java:305)
-	at org.testng.Assert.assertEquals(Assert.java:315)
-	at pages.Header_Footer_Functionality.validateHeader(Header_Footer_Functionality.java:274)
-	at com.JJill.testcases.TestCases.verifyHeaderFunctionality(TestCases.java:115)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>20</td>
+<td>567</td>
 <td>com.JJill.testcases.TestCases@26b3fd41</td></tr>
 <tr>
 <td title='com.JJill.testcases.TestCases.verifyInventoryData()'><b>verifyInventoryData</b><br>Test class: com.JJill.testcases.TestCases<br/>
-<a href="#Output-926017718" onClick='toggleBox("Output-926017718", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-792311092" onClick='toggleBox("Output-792311092", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-926017718" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-926017718">
+<a href="#Output-792311092" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-792311092">
 Fetch the useremail and password from the test data sheet and set it<br/>
 Fetched the useremail and password from the test data sheet successfully<br/>
 Enter Username and Password<br/>
 Login Successful<br/>
 Validating the Out of Stock Functionality Started<br/>
-Fetch the search data<br/>
-Fetched search data from the test data sheet successfully<br/>
-Enter Sku Data<br/>
-OOS Validation Sucessful<br/>
-Validating the LowInventory Functionality Started<br/>
-Fetch the search data<br/>
-Fetched search data from the test data sheet successfully<br/>
-Enter Sku Data<br/>
-LowInventory Validation Sucessful<br/>
-Validating the Backordered Functionality Started<br/>
 </div>
 </td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;search&quot; value=&quot;&quot; placeholder=&quot;Search&quot; name=&quot;searchTerm&quot; id=&quot;searchInput&quot; class=&quot;jss94&quot;&gt; is not clickable at point (1116, 104). Other element would receive the click: &lt;div id=&quot;oo_invitation_overlay&quot; class=&quot;no_loading&quot;&gt;&lt;/div&gt;
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;search&quot; value=&quot;&quot; placeholder=&quot;Search&quot; name=&quot;searchTerm&quot; id=&quot;searchInput&quot; class=&quot;jss94&quot;&gt; is not clickable at point (1116, 104). Other element would receive the click: &lt;div id=&quot;fcopt-onsite-app-55248_modal&quot; class=&quot;fcopt_modal&quot;&gt;&lt;/div&gt;
   (Session info: chrome=98.0.4758.102)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;QU1980&apos;, ip: &apos;10.0.0.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:51945}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 6a40d181e226227deb113bab2a22ef6a
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:57469}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0cdad8bab869fb5903655311dd2617be
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -267,16 +195,16 @@ Session ID: 6a40d181e226227deb113bab2a22ef6a
 	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
-	at pages.PDP_QuickLook_Functionality.validateBackOrderedFunctionality(PDP_QuickLook_Functionality.java:454)
-	at com.JJill.testcases.TestCases.verifyInventoryData(TestCases.java:133)
-... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace926017718", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace926017718'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;search&quot; value=&quot;&quot; placeholder=&quot;Search&quot; name=&quot;searchTerm&quot; id=&quot;searchInput&quot; class=&quot;jss94&quot;&gt; is not clickable at point (1116, 104). Other element would receive the click: &lt;div id=&quot;oo_invitation_overlay&quot; class=&quot;no_loading&quot;&gt;&lt;/div&gt;
+	at pages.PDP_QuickLook_Functionality.validateOOSFunctionality(PDP_QuickLook_Functionality.java:488)
+	at com.JJill.testcases.TestCases.verifyInventoryData(TestCases.java:131)
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace792311092", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace792311092'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;input type=&quot;search&quot; value=&quot;&quot; placeholder=&quot;Search&quot; name=&quot;searchTerm&quot; id=&quot;searchInput&quot; class=&quot;jss94&quot;&gt; is not clickable at point (1116, 104). Other element would receive the click: &lt;div id=&quot;fcopt-onsite-app-55248_modal&quot; class=&quot;fcopt_modal&quot;&gt;&lt;/div&gt;
   (Session info: chrome=98.0.4758.102)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;QU1980&apos;, ip: &apos;10.0.0.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:51945}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 6a40d181e226227deb113bab2a22ef6a
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:57469}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 0cdad8bab869fb5903655311dd2617be
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -295,8 +223,8 @@ Session ID: 6a40d181e226227deb113bab2a22ef6a
 	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
-	at pages.PDP_QuickLook_Functionality.validateBackOrderedFunctionality(PDP_QuickLook_Functionality.java:454)
-	at com.JJill.testcases.TestCases.verifyInventoryData(TestCases.java:133)
+	at pages.PDP_QuickLook_Functionality.validateOOSFunctionality(PDP_QuickLook_Functionality.java:488)
+	at com.JJill.testcases.TestCases.verifyInventoryData(TestCases.java:131)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -323,102 +251,14 @@ Session ID: 6a40d181e226227deb113bab2a22ef6a
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>30</td>
-<td>com.JJill.testcases.TestCases@26b3fd41</td></tr>
-<tr>
-<td title='com.JJill.testcases.TestCases.verifyLoginInFunctionality()'><b>verifyLoginInFunctionality</b><br>Test class: com.JJill.testcases.TestCases<br/>
-<a href="#Output-629092599" onClick='toggleBox("Output-629092599", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-629092599" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-629092599">
-Fetch the useremail and password from the test data sheet and set it<br/>
-Fetched the useremail and password from the test data sheet successfully<br/>
-Enter Username and Password<br/>
-Login Successful<br/>
-Logging out of application<br/>
-</div>
-</td>
-<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;MuiButton-label&quot;&gt;...&lt;/span&gt; is not clickable at point (901, 189). Other element would receive the click: &lt;iframe id=&quot;fcopt-offer-55248-content&quot; frameborder=&quot;0&quot; width=&quot;100%&quot; height=&quot;100%&quot; scrolling=&quot;no&quot; title=&quot;Acquisition - Welcome Page2&quot; src=&quot;https://api.securedvisit.com/lightbox/client/0043_00511/?fp=6d5b0a283ff0d414153d2c916bdb1cf0&amp;amp;m=form&amp;amp;form_id=55248&amp;amp;promo_id=6766&amp;amp;v=1645648152321&quot; style=&quot;overflow: hidden;&quot;&gt;&lt;/iframe&gt;
-  (Session info: chrome=98.0.4758.102)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;QU1980&apos;, ip: &apos;10.0.0.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:50705}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 96501a94ea319db04b0fa907c5676735
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
-	at pages.LoginFunctionality.JJill_Logout(LoginFunctionality.java:242)
-	at com.JJill.testcases.TestCases.verifyLoginInFunctionality(TestCases.java:29)
-... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace629092599", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace629092599'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;span class=&quot;MuiButton-label&quot;&gt;...&lt;/span&gt; is not clickable at point (901, 189). Other element would receive the click: &lt;iframe id=&quot;fcopt-offer-55248-content&quot; frameborder=&quot;0&quot; width=&quot;100%&quot; height=&quot;100%&quot; scrolling=&quot;no&quot; title=&quot;Acquisition - Welcome Page2&quot; src=&quot;https://api.securedvisit.com/lightbox/client/0043_00511/?fp=6d5b0a283ff0d414153d2c916bdb1cf0&amp;amp;m=form&amp;amp;form_id=55248&amp;amp;promo_id=6766&amp;amp;v=1645648152321&quot; style=&quot;overflow: hidden;&quot;&gt;&lt;/iframe&gt;
-  (Session info: chrome=98.0.4758.102)
-Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
-System info: host: &apos;QU1980&apos;, ip: &apos;10.0.0.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:50705}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 96501a94ea319db04b0fa907c5676735
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
-	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
-	at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-	at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
-	at pages.LoginFunctionality.JJill_Logout(LoginFunctionality.java:242)
-	at com.JJill.testcases.TestCases.verifyLoginInFunctionality(TestCases.java:29)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>9</td>
+<td>8</td>
 <td>com.JJill.testcases.TestCases@26b3fd41</td></tr>
 <tr>
 <td title='com.JJill.testcases.TestCases.verifyMonetateBadging()'><b>verifyMonetateBadging</b><br>Test class: com.JJill.testcases.TestCases<br/>
-<a href="#Output-106350019" onClick='toggleBox("Output-106350019", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-720007548" onClick='toggleBox("Output-720007548", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-106350019" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-106350019">
+<a href="#Output-720007548" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-720007548">
 Fetch the useremail and password from the test data sheet and set it<br/>
 Fetched the useremail and password from the test data sheet successfully<br/>
 Enter Username and Password<br/>
@@ -431,8 +271,8 @@ Select the department<br/>
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;QU1980&apos;, ip: &apos;10.0.0.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:50806}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 2bff290f82576efa9aba5cd1c240fb34
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:56343}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6adf66e435095e1e5175ac0ea26f2954
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
@@ -444,14 +284,14 @@ Session ID: 2bff290f82576efa9aba5cd1c240fb34
 	at org.openqa.selenium.interactions.Actions.perform(Actions.java:595)
 	at pages.AddProduct_CheckoutFunctionality.selectSaleDepartment(AddProduct_CheckoutFunctionality.java:655)
 	at com.JJill.testcases.TestCases.verifyMonetateBadging(TestCases.java:95)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace106350019", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace106350019'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: https://www.jjill.com/sale/sale-womens-clothing has no size and location
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace720007548", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace720007548'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable: https://www.jjill.com/sale/sale-womens-clothing has no size and location
   (Session info: chrome=98.0.4758.102)
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;QU1980&apos;, ip: &apos;10.0.0.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:50806}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: 2bff290f82576efa9aba5cd1c240fb34
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:56343}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 6adf66e435095e1e5175ac0ea26f2954
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -497,60 +337,47 @@ Session ID: 2bff290f82576efa9aba5cd1c240fb34
 <td>11</td>
 <td>com.JJill.testcases.TestCases@26b3fd41</td></tr>
 <tr>
-<td title='com.JJill.testcases.TestCases.verifyPDPFunctionality()'><b>verifyPDPFunctionality</b><br>Test class: com.JJill.testcases.TestCases<br/>
-<a href="#Output-1308088814" onClick='toggleBox("Output-1308088814", this, "Show output", "Hide output");'>Show output</a>
+<td title='com.JJill.testcases.TestCases.verifyPaginationFunctionality()'><b>verifyPaginationFunctionality</b><br>Test class: com.JJill.testcases.TestCases<br/>
+<a href="#Output-78973985" onClick='toggleBox("Output-78973985", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1308088814" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1308088814">
+<a href="#Output-78973985" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-78973985">
 Fetch the useremail and password from the test data sheet and set it<br/>
 Fetched the useremail and password from the test data sheet successfully<br/>
 Enter Username and Password<br/>
 Login Successful<br/>
 Select the department<br/>
 Selected the department sucessfully<br/>
-Validating the PDP Started<br/>
-Misses<br/>
-Petite<br/>
-Women's<br/>
-PDP Validation Sucessful<br/>
-Navigate to Home Page<br/>
 Logging out of application<br/>
 </div>
 </td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@name=&apos;profile-button&apos;]&quot;}
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;MuiButtonBase-root MuiButton-root MuiButton-text jss116 jss23&quot; tabindex=&quot;0&quot; type=&quot;button&quot; name=&quot;profile-button&quot;&gt;...&lt;/button&gt; is not clickable at point (1083, 72). Other element would receive the click: &lt;div id=&quot;oo_invitation_overlay&quot; class=&quot;no_loading&quot;&gt;&lt;/div&gt;
   (Session info: chrome=98.0.4758.102)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;QU1980&apos;, ip: &apos;10.0.0.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:50915}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e6870357f3f9516fa87ef853810fc8cc
-*** Element info: {Using=xpath, value=//button[@name=&apos;profile-button&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:56899}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e9b3906fbb44438df4351cb64e457d4c
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
 	at pages.LoginFunctionality.JJill_Logout(LoginFunctionality.java:240)
-	at com.JJill.testcases.TestCases.verifyPDPFunctionality(TestCases.java:54)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1308088814", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1308088814'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[@name=&apos;profile-button&apos;]&quot;}
+	at com.JJill.testcases.TestCases.verifyPaginationFunctionality(TestCases.java:108)
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace78973985", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace78973985'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button class=&quot;MuiButtonBase-root MuiButton-root MuiButton-text jss116 jss23&quot; tabindex=&quot;0&quot; type=&quot;button&quot; name=&quot;profile-button&quot;&gt;...&lt;/button&gt; is not clickable at point (1083, 72). Other element would receive the click: &lt;div id=&quot;oo_invitation_overlay&quot; class=&quot;no_loading&quot;&gt;&lt;/div&gt;
   (Session info: chrome=98.0.4758.102)
-For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;QU1980&apos;, ip: &apos;10.0.0.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:50915}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: e6870357f3f9516fa87ef853810fc8cc
-*** Element info: {Using=xpath, value=//button[@name=&apos;profile-button&apos;]}
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:56899}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e9b3906fbb44438df4351cb64e457d4c
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -562,15 +389,15 @@ Session ID: e6870357f3f9516fa87ef853810fc8cc
 	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 	at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
 	at pages.LoginFunctionality.JJill_Logout(LoginFunctionality.java:240)
-	at com.JJill.testcases.TestCases.verifyPDPFunctionality(TestCases.java:54)
+	at com.JJill.testcases.TestCases.verifyPaginationFunctionality(TestCases.java:108)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -597,14 +424,105 @@ Session ID: e6870357f3f9516fa87ef853810fc8cc
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>253</td>
+<td>73</td>
+<td>com.JJill.testcases.TestCases@26b3fd41</td></tr>
+<tr>
+<td title='com.JJill.testcases.TestCases.verifySearchFunctionality()'><b>verifySearchFunctionality</b><br>Test class: com.JJill.testcases.TestCases<br/>
+<a href="#Output-959718932" onClick='toggleBox("Output-959718932", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-959718932" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-959718932">
+Fetch the useremail and password from the test data sheet and set it<br/>
+Fetched the useremail and password from the test data sheet successfully<br/>
+Enter Username and Password<br/>
+Login Successful<br/>
+Validating the Search Functionality Started<br/>
+Fetch the search data<br/>
+Fetched search data from the test data sheet successfully<br/>
+Enter Search Data<br/>
+</div>
+</td>
+<td><div><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li class=&quot;jss255&quot;&gt;...&lt;/li&gt; is not clickable at point (1109, 209). Other element would receive the click: &lt;div id=&quot;fcopt-onsite-app-55248_modal&quot; class=&quot;fcopt_modal&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=98.0.4758.102)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;QU1980&apos;, ip: &apos;10.0.0.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:57166}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5ad7e42ea35eec1b468752874d7459de
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
+	at pages.PLP_Search_CLT_STL_Functionality.validateSearchFunctionality(PLP_Search_CLT_STL_Functionality.java:202)
+	at com.JJill.testcases.TestCases.verifySearchFunctionality(TestCases.java:70)
+... Removed 33 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace959718932", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace959718932'><pre>org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;li class=&quot;jss255&quot;&gt;...&lt;/li&gt; is not clickable at point (1109, 209). Other element would receive the click: &lt;div id=&quot;fcopt-onsite-app-55248_modal&quot; class=&quot;fcopt_modal&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=98.0.4758.102)
+Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
+System info: host: &apos;QU1980&apos;, ip: &apos;10.0.0.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:57166}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 5ad7e42ea35eec1b468752874d7459de
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
+	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:285)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at jdk.internal.reflect.GeneratedMethodAccessor4.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
+	at pages.PLP_Search_CLT_STL_Functionality.validateSearchFunctionality(PLP_Search_CLT_STL_Functionality.java:202)
+	at com.JJill.testcases.TestCases.verifySearchFunctionality(TestCases.java:70)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>11</td>
 <td>com.JJill.testcases.TestCases@26b3fd41</td></tr>
 <tr>
 <td title='com.JJill.testcases.TestCases.verifyShoptheLook()'><b>verifyShoptheLook</b><br>Test class: com.JJill.testcases.TestCases<br/>
-<a href="#Output-1886706205" onClick='toggleBox("Output-1886706205", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-7881234" onClick='toggleBox("Output-7881234", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1886706205" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1886706205">
+<a href="#Output-7881234" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-7881234">
 Fetch the useremail and password from the test data sheet and set it<br/>
 Fetched the useremail and password from the test data sheet successfully<br/>
 Enter Username and Password<br/>
@@ -620,8 +538,8 @@ For documentation on this error, please visit: https://www.seleniumhq.org/except
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;QU1980&apos;, ip: &apos;10.0.0.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:51733}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: a2c0c6751cf800124e50bc9ca0ddc8db
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:57304}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 948bf5082a2cd56c24aa52980fd26b69
 *** Element info: {Using=xpath, value=(//span[@class=&apos;shop-link&apos;])[2]}
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
 	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
@@ -638,15 +556,15 @@ Session ID: a2c0c6751cf800124e50bc9ca0ddc8db
 	at jdk.proxy2/jdk.proxy2.$Proxy12.click(Unknown Source)
 	at pages.PLP_Search_CLT_STL_Functionality.validateSTLPlpPage(PLP_Search_CLT_STL_Functionality.java:291)
 	at com.JJill.testcases.TestCases.verifyShoptheLook(TestCases.java:88)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1886706205", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1886706205'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//span[@class=&apos;shop-link&apos;])[2]&quot;}
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace7881234", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace7881234'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;(//span[@class=&apos;shop-link&apos;])[2]&quot;}
   (Session info: chrome=98.0.4758.102)
 For documentation on this error, please visit: https://www.seleniumhq.org/exceptions/no_such_element.html
 Build info: version: &apos;3.141.59&apos;, revision: &apos;e82be7d358&apos;, time: &apos;2018-11-14T08:17:03&apos;
 System info: host: &apos;QU1980&apos;, ip: &apos;10.0.0.249&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;16.0.2&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:51733}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
-Session ID: a2c0c6751cf800124e50bc9ca0ddc8db
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 98.0.4758.102, chrome: {chromedriverVersion: 97.0.4692.71 (adefa7837d02a..., userDataDir: C:\Users\NITKHI~1.KUT\AppDa...}, goog:chromeOptions: {debuggerAddress: localhost:57304}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 948bf5082a2cd56c24aa52980fd26b69
 *** Element info: {Using=xpath, value=(//span[@class=&apos;shop-link&apos;])[2]}
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:78)
@@ -694,7 +612,7 @@ Session ID: a2c0c6751cf800124e50bc9ca0ddc8db
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 </pre></div></td>
-<td>39</td>
+<td>37</td>
 <td>com.JJill.testcases.TestCases@26b3fd41</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
@@ -728,14 +646,14 @@ Logout successful<br/>
 </div>
 </td>
 <td></td>
-<td>25</td>
+<td>28</td>
 <td>com.JJill.testcases.TestCases@26b3fd41</td></tr>
 <tr>
 <td title='com.JJill.testcases.TestCases.verifyFooterFunctionality()'><b>verifyFooterFunctionality</b><br>Test class: com.JJill.testcases.TestCases<br/>
-<a href="#Output-1960031800" onClick='toggleBox("Output-1960031800", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-309271464" onClick='toggleBox("Output-309271464", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-1960031800" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-1960031800">
+<a href="#Output-309271464" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-309271464">
 Fetch the useremail and password from the test data sheet and set it<br/>
 Fetched the useremail and password from the test data sheet successfully<br/>
 Enter Username and Password<br/>
@@ -747,14 +665,59 @@ Logout successful<br/>
 </div>
 </td>
 <td></td>
-<td>100</td>
+<td>93</td>
+<td>com.JJill.testcases.TestCases@26b3fd41</td></tr>
+<tr>
+<td title='com.JJill.testcases.TestCases.verifyHeaderFunctionality()'><b>verifyHeaderFunctionality</b><br>Test class: com.JJill.testcases.TestCases<br/>
+<a href="#Output-1106488049" onClick='toggleBox("Output-1106488049", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1106488049" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1106488049">
+Fetch the useremail and password from the test data sheet and set it<br/>
+Fetched the useremail and password from the test data sheet successfully<br/>
+Enter Username and Password<br/>
+Login Successful<br/>
+Validate Header Functioanality<br/>
+Validated Header Functionality successfully<br/>
+Logging out of application<br/>
+Logout successful<br/>
+</div>
+</td>
+<td></td>
+<td>42</td>
+<td>com.JJill.testcases.TestCases@26b3fd41</td></tr>
+<tr>
+<td title='com.JJill.testcases.TestCases.verifyPDPFunctionality()'><b>verifyPDPFunctionality</b><br>Test class: com.JJill.testcases.TestCases<br/>
+<a href="#Output-546619197" onClick='toggleBox("Output-546619197", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-546619197" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-546619197">
+Fetch the useremail and password from the test data sheet and set it<br/>
+Fetched the useremail and password from the test data sheet successfully<br/>
+Enter Username and Password<br/>
+Login Successful<br/>
+Select the department<br/>
+Selected the department sucessfully<br/>
+Validating the PDP Started<br/>
+Misses<br/>
+Petite<br/>
+Women's<br/>
+Tall<br/>
+PDP Validation Sucessful<br/>
+Navigate to Home Page<br/>
+Logging out of application<br/>
+Logout successful<br/>
+</div>
+</td>
+<td></td>
+<td>58</td>
 <td>com.JJill.testcases.TestCases@26b3fd41</td></tr>
 <tr>
 <td title='com.JJill.testcases.TestCases.verifyPLPFunctionality()'><b>verifyPLPFunctionality</b><br>Test class: com.JJill.testcases.TestCases<br/>
-<a href="#Output-914824856" onClick='toggleBox("Output-914824856", this, "Show output", "Hide output");'>Show output</a>
+<a href="#Output-1682050612" onClick='toggleBox("Output-1682050612", this, "Show output", "Hide output");'>Show output</a>
 
-<a href="#Output-914824856" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-914824856">
+<a href="#Output-1682050612" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1682050612">
 Fetch the useremail and password from the test data sheet and set it<br/>
 Fetched the useremail and password from the test data sheet successfully<br/>
 Enter Username and Password<br/>
@@ -768,49 +731,7 @@ Logout successful<br/>
 </div>
 </td>
 <td></td>
-<td>23</td>
-<td>com.JJill.testcases.TestCases@26b3fd41</td></tr>
-<tr>
-<td title='com.JJill.testcases.TestCases.verifyPaginationFunctionality()'><b>verifyPaginationFunctionality</b><br>Test class: com.JJill.testcases.TestCases<br/>
-<a href="#Output-102564126" onClick='toggleBox("Output-102564126", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-102564126" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-102564126">
-Fetch the useremail and password from the test data sheet and set it<br/>
-Fetched the useremail and password from the test data sheet successfully<br/>
-Enter Username and Password<br/>
-Login Successful<br/>
-Select the department<br/>
-Selected the department sucessfully<br/>
-Logging out of application<br/>
-Logout successful<br/>
-</div>
-</td>
-<td></td>
-<td>79</td>
-<td>com.JJill.testcases.TestCases@26b3fd41</td></tr>
-<tr>
-<td title='com.JJill.testcases.TestCases.verifySearchFunctionality()'><b>verifySearchFunctionality</b><br>Test class: com.JJill.testcases.TestCases<br/>
-<a href="#Output-199907649" onClick='toggleBox("Output-199907649", this, "Show output", "Hide output");'>Show output</a>
-
-<a href="#Output-199907649" onClick="toggleAllBoxes();">Show all outputs</a>
-<div class='log' id="Output-199907649">
-Fetch the useremail and password from the test data sheet and set it<br/>
-Fetched the useremail and password from the test data sheet successfully<br/>
-Enter Username and Password<br/>
-Login Successful<br/>
-Validating the Search Functionality Started<br/>
-Fetch the search data<br/>
-Fetched search data from the test data sheet successfully<br/>
-Enter Search Data<br/>
-Seacrh Validation Sucessful<br/>
-Navigate to Home Page<br/>
-Logging out of application<br/>
-Logout successful<br/>
-</div>
-</td>
-<td></td>
-<td>33</td>
+<td>19</td>
 <td>com.JJill.testcases.TestCases@26b3fd41</td></tr>
 </table><p>
 </body>
