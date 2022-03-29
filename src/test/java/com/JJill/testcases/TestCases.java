@@ -44,7 +44,7 @@ public class TestCases extends TestBase{
 		.JJill_Logout();
 	}
 	
-	@Test(groups={"SmokeTest","Production"}) 
+	@Test(groups={"SmokeTest","Production","V9-16X"}) 
 	public void verifyPDPFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
 		.selectClothingDepartment()
@@ -54,7 +54,7 @@ public class TestCases extends TestBase{
 		.JJill_Logout();
 	}
 	
-	@Test(groups={"SmokeTest","Production"}) 
+	@Test(groups={"SmokeTest","Production","V9-16X"}) 
 	public void verifyPLPFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
 		.selectSaleDepartment()
@@ -63,7 +63,7 @@ public class TestCases extends TestBase{
 		.JJill_Logout();
 	}
 	
-	@Test(groups={"SmokeTest","Production"})
+	@Test(groups={"SmokeTest","Production","V9-16X"})
 	public void verifySearchFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
 		.ConnectingMethodLogin_PLP()
@@ -72,7 +72,7 @@ public class TestCases extends TestBase{
 		.JJill_Logout();
 	}
 	
-	@Test(groups={"SmokeTest","Production"})
+	@Test(groups={"SmokeTest","Production","V9-16X"})
 	public void verifyCompletetheLook() throws InterruptedException{
 		loginpage.JJill_Login()
 		.ConnectingMethodLogin_PLP()
@@ -80,7 +80,7 @@ public class TestCases extends TestBase{
 		.JJill_Logout();
 	}
 	
-	@Test(groups={"SmokeTest","Production"})
+	@Test(groups={"SmokeTest","Production","V9-16X"})
 	public void verifyPDP_CompletetheLook() throws InterruptedException{
 		loginpage.JJill_Login()
 		.ConnectingMethodLogin_PLP()
@@ -97,7 +97,7 @@ public class TestCases extends TestBase{
 		.JJill_STLLogout();
 	}
 	
-	@Test(groups={"SmokeTest","Production"}) 
+	@Test(groups={"SmokeTest","Production","V9-16X"}) 
 	public void verifyMonetateBadging() throws InterruptedException{
 		loginpage.JJill_Login()
 		.selectSaleDepartment()
@@ -106,8 +106,16 @@ public class TestCases extends TestBase{
 		.JJill_Logout();
 	}
 	
+	@Test(groups={"SmokeTest"}) 
+	public void verifyremoveProductsShoppingbag() throws InterruptedException{
+		loginpage.JJill_Login()
+		.selectshoppingbag()
+		.removeProductsShoppingbag()
+		.navigateToHomePage()
+		.JJill_Logout();
+	}
 	
-	@Test(groups={"SmokeTest","Production"}) 
+	@Test(groups={"SmokeTest","Production","V9-16X"}) 
 	public void verifyPaginationFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
 		.selectClothingDepartment()
@@ -116,7 +124,7 @@ public class TestCases extends TestBase{
 		.JJill_Logout();
 	}
 	
-	@Test(groups={"SmokeTest","Production"}) 
+	@Test(groups={"SmokeTest","Production","V9-16X"}) 
 	public void verifyHeaderFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
 		.ConnectingMethodLogin_Header()
@@ -124,7 +132,7 @@ public class TestCases extends TestBase{
 		.JJill_Logout();
 	}
 	
-	@Test(groups={"SmokeTest","Production"}) 
+	@Test(groups={"SmokeTest","Production","V9-16X"}) 
 	public void verifyFooterFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
 		.ConnectingMethodLogin_Header()
@@ -142,7 +150,7 @@ public class TestCases extends TestBase{
 		.JJill_Logout();
 	}
 	
-	@Test(groups={"SmokeTest"},priority=11) 
+	@Test(groups={"SmokeTest","Production","V9-16X"},priority=11) 
 	public void verifyQuickLookFunctionality() throws InterruptedException{
 		loginpage.JJill_Login()
 		.selectClothingDepartment()

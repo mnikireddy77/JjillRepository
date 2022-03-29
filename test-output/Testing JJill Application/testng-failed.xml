@@ -15,8 +15,8 @@
         <methods>
           <include name="setup"/>
           <include name="verifyMonetateBadging"/>
+          <include name="verifyQuickLookFunctionality"/>
           <include name="closeAll"/>
-          <include name="verifyForgotPasswordFunctionality"/>
           <include name="verifyShoptheLook"/>
           <include name="verifyInventoryData"/>
           <include name="tearDown"/>

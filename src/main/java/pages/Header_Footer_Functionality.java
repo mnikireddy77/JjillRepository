@@ -345,6 +345,7 @@ public class Header_Footer_Functionality extends ElementOperations {
 			for (int j = 0; j < 3; j++) {
 				jse.executeScript("window.scrollBy(0,1200)");
 				Thread.sleep(20);
+				jse.executeScript("window.scrollBy(0,1200)");
 			}
 		}
 		if (btn_FooterFAQ.isDisplayed()) {
