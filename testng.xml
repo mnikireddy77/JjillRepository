@@ -22,7 +22,7 @@
    <!--  <include name="verifyShoptheLook"/> -->
 	<!--      <include name="verifyHeaderFunctionality"/>   -->                                             
      <!--      <include name="verifyMonetateBadging"/>       -->     
-           <!--   <include name="verifyFooterFunctionality"/> -->
+           <!--   <include name="verifyFooterFunctionality"/> --><!--  -->
           <!--  <include name="verifyPDPFunctionality"/>  -->
     <!--    <include name="verifyQuickLookFunctionality"/> -->
       <!--      Works with staging Environment only

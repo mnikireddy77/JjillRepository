@@ -77,8 +77,6 @@ public class LoginFunctionality extends ElementOperations {
 
 	@FindBy(xpath = "(//img[@alt='Jjill logo'])[2]")
 	WebElement btnlogo;
-	
-	
 
 	@FindBy(xpath = "//p[@id='logonPassword_error']")
 	WebElement msgerror;
@@ -110,6 +108,9 @@ public class LoginFunctionality extends ElementOperations {
 
 	@FindBy(xpath = "//span[contains(text(),'x')]")
 	WebElement btnclose;
+	
+	@FindBy(xpath = "//span[contains(text(),'✖')]")
+	WebElement btnfeedbackclose;
 
 	@FindBy(css = "img[alt*='logo']")
 	WebElement btnLogo;
@@ -236,11 +237,21 @@ public class LoginFunctionality extends ElementOperations {
 
 	public LoginFunctionality JJill_Logout() throws InterruptedException {
 		Reporter.log("Logging out of application", true);
-		Thread.sleep(600);
+		Thread.sleep(1000);
+		/*try {
+				btnfeedbackclose.click();
+		}
+		catch(Exception e)
+		{
+		System.out.println(e);
+		}
+		finally
+		{*/
 		btnaccount.click();
 		Thread.sleep(500);
 		btnLogout.click();
 		Reporter.log("Logout successful", true);
+		//}
 		return new LoginFunctionality();
 	}
 

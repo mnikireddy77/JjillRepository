@@ -36,6 +36,9 @@ public class Pagination_Monetate  extends ElementOperations {
 
 		@FindBy(xpath = "//div[contains(@class,'MuiGrid-root MuiGrid-item MuiGrid-grid')] /ul/li")
 		List<WebElement> imgPLP;
+		
+		@FindBy(xpath = "//a[@id='oo_close_prompt']")
+		WebElement btnClose;
 
 		@FindBy(xpath = "(//div[contains(@id,'product')]) /div /div[1] /div[1]/img")
 		List<WebElement> monetatebadge;
@@ -59,8 +62,12 @@ public class Pagination_Monetate  extends ElementOperations {
 		System.out.println(i);
 		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 		jse.executeScript("window.scrollBy(0,450)");
+		/*
+		 * try { if(btnClose.isDisplayed()) btnClose.click(); } finally {
+		 */
 		for (int j = 0; j < i; j++) {
 			try {
+				System.out.println("Hi");
 				if (pagecontent.isDisplayed()) {
 					Thread.sleep(5000);
 					if (btnnexttop.isDisplayed()) {
@@ -76,6 +83,7 @@ public class Pagination_Monetate  extends ElementOperations {
 			Thread.sleep(5000);
 			jse.executeScript("window.scrollBy(0,500)");
 		}
+	//	}
 		Thread.sleep(5000);
 		jse.executeScript("window.scrollBy(0,-500)");
 		return new LoginFunctionality();
@@ -95,6 +103,11 @@ public class Pagination_Monetate  extends ElementOperations {
 		} catch (Exception e) {
 			System.out.println(pagecount);
 		}
+		/*
+		 * try { if(btnClose.isDisplayed()) btnClose.click(); }
+		 */
+		finally
+		{
 		for (int j = 0; j < pagecount; j++) {
 			jse.executeScript("window.scrollBy(0,400)");
 			int size = imgPLP.size();
@@ -120,21 +133,20 @@ public class Pagination_Monetate  extends ElementOperations {
 				Thread.sleep(1500);
 			}
 		
-			catch (Exception e) {
+			catch (Exception e) 
+			{
 				Thread.sleep(1000);
 			}
+		}	
+			
 		}
-		for (int i = 0; i < 15; i++) {
+		for (int i = 0; i < 20; i++) {
 			Thread.sleep(1000);
 			jse.executeScript("window.scrollBy(0,-700)");
 		}
 		Thread.sleep(1000);
 		Reporter.log("Monetate Badging validated sucessfully", true);
-		// }
 		return new LoginFunctionality();
 	}
-
-			
-
 	
 }

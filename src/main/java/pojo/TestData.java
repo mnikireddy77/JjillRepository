@@ -36,7 +36,11 @@ public @Data class TestData {
 	
 	private String searchData;
 	
+	private String SizeType;
 	
+	private String Color;
+	
+	private String Size;
 
 	public String getFirstName() {
 		return firstName;
@@ -165,6 +169,32 @@ public @Data class TestData {
 
 	public void setSearchData(String searchData) {
 		this.searchData = searchData;
+	}
+	
+	
+	public String getSizeType() {
+		return SizeType;
+	}
+
+	public void setSizeTypeData(String SizeType) {
+		this.SizeType = SizeType;
+	}
+	
+	public String getcolor() {
+		return Color;
+	}
+
+	public void setcolorData(String Color) {
+		this.Color = Color;
+	}
+	
+	
+	public String getSize() {
+		return Size;
+	}
+
+	public void setSizeData(String Size) {
+		this.Size = Size;
 	}
 	
 }
