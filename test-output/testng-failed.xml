@@ -15,7 +15,6 @@
         <methods>
           <include name="setup"/>
           <include name="closeAll"/>
-          <include name="verifyShoptheLook"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.JJill.testcases.TestCases -->
